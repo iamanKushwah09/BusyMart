@@ -43,8 +43,8 @@ const EnquiryForm = () => {
           
           <div className="grid lg:grid-cols-2 gap-16 relative z-10">
             <div>
-              <h2 className="text-4xl md:text-5xl font-black font-display mb-6">Let's Build Something <span className="text-primary">Extraordinary</span></h2>
-              <p className="text-lg text-white/60 mb-8">
+              <h2 className="text-4xl md:text-5xl font-black font-display mb-6 text-slate-900 dark:text-white transition-colors">Let's Build Something <span className="text-primary">Extraordinary</span></h2>
+              <p className="text-lg text-slate-600 dark:text-white/60 mb-8 transition-colors">
                 Ready to take your business to the next level? Fill out the form and our strategies will get back to you within 24 hours.
               </p>
               
@@ -53,13 +53,13 @@ const EnquiryForm = () => {
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                     <CheckCircle2 className="w-6 h-6" />
                   </div>
-                  <p className="font-medium text-white/80">Free Consultation</p>
+                  <p className="font-medium text-slate-700 dark:text-white/80 transition-colors">Free Consultation</p>
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
                     <CheckCircle2 className="w-6 h-6" />
                   </div>
-                  <p className="font-medium text-white/80">Custom Strategy Plan</p>
+                  <p className="font-medium text-slate-700 dark:text-white/80 transition-colors">Custom Strategy Plan</p>
                 </div>
               </div>
             </div>
@@ -81,18 +81,18 @@ const EnquiryForm = () => {
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-white/50 px-1">Full Name</label>
+                      <label className="text-sm font-medium text-slate-500 dark:text-white/50 px-1 transition-colors">Full Name</label>
                       <input 
                         {...register("name", { required: true })}
-                        className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-6 text-white focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                        className="w-full bg-white/50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl py-4 px-6 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all shadow-sm"
                         placeholder="John Doe"
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-white/50 px-1">Email Address</label>
+                      <label className="text-sm font-medium text-slate-500 dark:text-white/50 px-1 transition-colors">Email Address</label>
                       <input 
                         {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
-                        className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-6 text-white focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                        className="w-full bg-white/50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl py-4 px-6 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all shadow-sm"
                         placeholder="john@example.com"
                       />
                     </div>

@@ -36,7 +36,7 @@ const Navbar = () => {
           <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center">
             <ShoppingBag className="text-white w-6 h-6" />
           </div>
-          <span className="text-2xl font-bold font-display tracking-tight text-white">
+          <span className="text-2xl font-bold font-display tracking-tight text-slate-900 dark:text-white transition-colors">
             BusyMart
           </span>
         </a>
@@ -47,23 +47,23 @@ const Navbar = () => {
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-white/70 hover:text-white transition-colors"
+              className="text-sm font-medium text-slate-600 dark:text-white/70 hover:text-primary dark:hover:text-white transition-colors"
             >
               {link.name}
             </a>
           ))}
           <ThemeToggle />
-          <a href="#contact" className="px-6 py-2.5 bg-white text-black font-semibold rounded-full hover:bg-white/90 transition-all hover:scale-105 active:scale-95">
-            Get Started
+          <a href="#contact" className="px-6 py-2.5 bg-primary dark:bg-white text-white dark:text-black font-semibold rounded-full hover:scale-105 active:scale-95 transition-all">
+            Contact Us
           </a>
         </div>
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-white"
+          className="md:hidden text-slate-900 dark:text-white"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          {isMobileMenuOpen ? <X /> : <Menu />}
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
@@ -81,13 +81,13 @@ const Navbar = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-lg font-medium text-white/70 hover:text-white"
+                  className="text-lg font-medium text-slate-600 dark:text-white/70 hover:text-primary dark:hover:text-white"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.name}
                 </a>
               ))}
-              <a href="#contact" className="w-full py-3 bg-white text-black font-semibold rounded-xl text-center">
+              <a href="#contact" className="w-full py-3 bg-primary dark:bg-white text-white dark:text-black font-semibold rounded-xl text-center">
                 Get Started
               </a>
             </div>

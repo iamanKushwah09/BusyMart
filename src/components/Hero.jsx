@@ -19,11 +19,11 @@ const Hero = () => {
             <span className="inline-block py-1 px-4 mb-6 rounded-full glass border text-sm font-medium text-primary">
               The Future of E-Commerce is Here
             </span>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black font-display mb-8 tracking-tight leading-[1.1]">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black font-display mb-8 tracking-tight leading-[1.1] text-slate-900 dark:text-white transition-colors">
               Launch Your E-Commerce <br />
               <span className="text-gradient">Business Effortlessly</span>
             </h1>
-            <p className="text-xl md:text-2xl text-white/60 mb-10 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-slate-600 dark:text-white/60 mb-10 max-w-2xl mx-auto leading-relaxed transition-colors">
               Empowering entrepreneurs with cutting-edge tools to build, scale, and manage 
               successful online stores in record time.
             </p>
@@ -42,7 +42,7 @@ const Hero = () => {
               href="https://wa.me/918989218206?text=Hello%20BusyMart!%20I'm%20interested%20in%20your%20services." 
               target="_blank" 
               rel="noopener noreferrer"
-              className="w-full sm:w-auto px-8 py-4 glass text-white font-bold rounded-2xl hover:bg-white/10 transition-colors flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-8 py-4 glass text-slate-900 dark:text-white font-bold rounded-2xl border-slate-200 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/10 transition-all flex items-center justify-center gap-2"
             >
               <MessageSquare className="w-5 h-5 text-secondary" /> Contact on WhatsApp
             </a>
@@ -75,8 +75,8 @@ const Hero = () => {
                       <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                     </div>
                     <div>
-                      <p className="text-xs text-white/50">Monthly Revenue</p>
-                      <p className="text-lg font-bold">+$48,250.00</p>
+                      <p className="text-xs text-slate-500 dark:text-white/50 transition-colors">Monthly Revenue</p>
+                      <p className="text-lg font-bold text-slate-900 dark:text-white transition-colors">+$48,250.00</p>
                     </div>
                   </div>
                 </motion.div>

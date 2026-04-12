@@ -22,7 +22,7 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-[#030712] text-white selection:bg-primary selection:text-white">
+    <div className="bg-slate-50 dark:bg-[#030712] text-slate-900 dark:text-white transition-colors duration-300 min-h-screen selection:bg-primary selection:text-white">
       <AnimatePresence>
         {loading && (
           <motion.div

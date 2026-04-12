@@ -57,14 +57,14 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="py-24 bg-[#030712] relative">
+    <section id="services" className="py-24 bg-slate-50 dark:bg-[#030712] relative transition-colors duration-300">
       <div className="container mx-auto px-6">
         <div className="text-center mb-32 h-[30vh] flex flex-col justify-center sticky top-0 z-0">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-7xl font-black font-display mb-6"
+            className="text-5xl md:text-7xl font-black font-display mb-6 text-slate-900 dark:text-white transition-colors"
           >
             Services Tailored for <span className="text-gradient">Winners</span>
           </motion.h2>
@@ -73,7 +73,7 @@ const Services = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-white/50 text-xl max-w-2xl mx-auto"
+            className="text-slate-500 dark:text-white/50 text-xl max-w-2xl mx-auto transition-colors"
           >
             Everything you need to reach six, seven, and even eight-figure milestones in your e-commerce journey.
           </motion.p>
@@ -94,19 +94,19 @@ const Services = () => {
                 className="group relative"
               >
                 <div className={cn(
-                  "p-10 md:p-16 rounded-[3rem] border border-white/10 shadow-2xl relative overflow-hidden h-[60vh] md:h-[50vh] flex flex-col md:flex-row items-center gap-12 glass overflow-hidden",
-                  "hover:border-white/20 transition-all duration-500"
+                  "p-10 md:p-16 rounded-[3rem] border border-slate-200 dark:border-white/10 shadow-2xl relative overflow-hidden h-[60vh] md:h-[50vh] flex flex-col md:flex-row items-center gap-12 glass overflow-hidden",
+                  "hover:border-slate-300 dark:hover:border-white/20 transition-all duration-500"
                 )}>
                   {/* Decorative Gradient Background */}
                   <div className={cn("absolute inset-0 bg-gradient-to-br opacity-5 group-hover:opacity-10 transition-opacity", service.color)} />
                   
-                  <div className="md:w-1/2 relative z-10">
-                    <span className="inline-block py-1 px-4 mb-6 rounded-full glass border text-xs font-bold uppercase tracking-wider text-white/70">
+                  <div className="md:w-1/2 relative z-10 text-left">
+                    <span className="inline-block py-1 px-4 mb-6 rounded-full glass border border-slate-200 dark:border-white/10 text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-white/70">
                       {service.tag}
                     </span>
-                    <h3 className="text-4xl md:text-5xl font-black text-white mb-6 group-hover:text-gradient transition-all">{service.title}</h3>
-                    <p className="text-white/60 text-lg leading-relaxed mb-10">{service.description}</p>
-                    <button className="px-8 py-3 bg-white text-black font-bold rounded-xl hover:scale-105 transition-transform flex items-center gap-2 group-hover:shadow-lg">
+                    <h3 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-6 group-hover:text-gradient transition-all">{service.title}</h3>
+                    <p className="text-slate-600 dark:text-white/60 text-lg leading-relaxed mb-10 transition-colors">{service.description}</p>
+                    <button className="px-8 py-3 bg-primary dark:bg-white text-white dark:text-black font-bold rounded-xl hover:scale-105 transition-transform flex items-center gap-2 group-hover:shadow-lg">
                       Explore Details
                     </button>
                   </div>
