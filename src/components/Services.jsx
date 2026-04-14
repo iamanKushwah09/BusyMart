@@ -143,8 +143,8 @@ const Services = () => {
           {services.map((service, index) => (
             <div 
               key={index}
-              className="sticky top-[15vh] w-full max-w-5xl mb-12"
-              style={{ top: `${15 + (index * 2)}vh` }}
+              className="lg:sticky w-full max-w-5xl mb-12 lg:mb-24"
+              style={{ top: `calc(10vh + ${index * 2}rem)` }}
             >
               <motion.div
                 initial={{ opacity: 0, y: 50, scale: 0.95 }}
@@ -154,29 +154,29 @@ const Services = () => {
                 className="group relative"
               >
                 <div className={cn(
-                  "p-10 md:p-16 rounded-[3rem] border shadow-2xl relative overflow-hidden h-[60vh] md:h-[50vh] flex flex-col md:flex-row items-center gap-12 glass overflow-hidden transition-all duration-500",
+                  "p-8 md:p-16 rounded-[2.5rem] md:rounded-[3rem] border shadow-2xl relative h-auto lg:h-[50vh] flex flex-col lg:flex-row items-center gap-8 md:gap-12 glass overflow-hidden transition-all duration-500",
                   "hover:scale-[1.01]"
                 )}>
                   {/* Decorative Gradient Background */}
                   <div className={cn("absolute inset-0 bg-gradient-to-br opacity-5 group-hover:opacity-10 transition-opacity", service.color)} />
                   
-                  <div className="md:w-1/2 relative z-10 text-left">
-                    <span className={cn("inline-block py-1 px-4 mb-6 rounded-full border text-xs font-bold uppercase tracking-wider transition-colors", service.accent)}>
+                  <div className="w-full lg:w-1/2 relative z-10 text-left order-2 lg:order-1">
+                    <span className={cn("inline-block py-1 px-4 mb-4 md:mb-6 rounded-full border text-[10px] md:text-xs font-bold uppercase tracking-wider transition-colors", service.accent)}>
                       {service.tag}
                     </span>
-                    <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-6 group-hover:text-slate-800 transition-all">{service.title}</h3>
-                    <p className="text-slate-600 text-lg leading-relaxed mb-10 transition-colors">{service.description}</p>
-                    <button className={cn("px-8 py-3 text-white font-bold rounded-xl transition-all flex items-center gap-2 shadow-lg", "bg-slate-900 shadow-slate-200")}>
+                    <h3 className="text-2xl md:text-5xl font-black text-slate-900 mb-4 md:mb-6 group-hover:text-slate-800 transition-all">{service.title}</h3>
+                    <p className="text-slate-600 text-sm md:text-lg leading-relaxed mb-6 md:mb-10 transition-colors">{service.description}</p>
+                    <button className={cn("w-full md:w-max px-8 py-3 text-white font-bold rounded-xl transition-all flex items-center justify-center gap-2 shadow-lg", "bg-slate-900 shadow-slate-200")}>
                       Explore Details
                     </button>
                   </div>
 
-                  <div className="md:w-1/2 flex justify-center items-center relative z-10 h-full">
+                  <div className="w-full lg:w-1/2 flex justify-center items-center relative z-10 h-48 lg:h-full order-1 lg:order-2">
                     <div className={cn(
-                      "w-48 h-48 md:w-64 md:h-64 rounded-[3rem] bg-gradient-to-br flex items-center justify-center text-white shadow-2xl animate-float group-hover:rotate-12 transition-transform duration-700",
+                      "w-32 h-32 md:w-64 md:h-64 rounded-[2rem] md:rounded-[3rem] bg-gradient-to-br flex items-center justify-center text-white shadow-2xl animate-float group-hover:rotate-12 transition-transform duration-700",
                       service.color
                     )}>
-                      {React.cloneElement(service.icon, { className: "w-24 h-24 md:w-32 md:h-32" })}
+                      {React.cloneElement(service.icon, { className: "w-16 h-16 md:w-32 md:h-32" })}
                     </div>
                   </div>
                 </div>
