@@ -31,13 +31,22 @@ const Navbar = () => {
       )}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <a href="#" className="flex items-center space-x-2">
-          <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center">
-            <ShoppingBag className="text-white w-6 h-6" />
+        <a href="#" className="flex items-center gap-3.5 group">
+          <div className="relative h-10 md:h-11 flex items-center justify-center transition-all duration-500 group-hover:scale-105">
+            <img 
+              src="/favicon.png" 
+              alt="MartBusy Logo" 
+              className="h-full w-auto object-contain drop-shadow-sm"
+            />
           </div>
-          <span className="text-2xl font-bold font-display tracking-tight text-slate-800 transition-colors">
-            MartBusy
-          </span>
+          <div className="flex flex-col">
+            <span className="text-2xl font-black font-display tracking-tight text-slate-900 leading-none">
+              Mart<span className="text-emerald-500">Busy</span>
+            </span>
+            <span className="text-[10px] uppercase tracking-[0.25em] font-bold text-slate-400 leading-none mt-1 group-hover:text-emerald-400 transition-colors">
+              Digital Empire
+            </span>
+          </div>
         </a>
 
         {/* Desktop Nav */}

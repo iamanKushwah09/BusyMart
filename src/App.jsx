@@ -32,27 +32,24 @@ function App() {
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[100] flex items-center justify-center bg-white"
           >
-            <div className="relative">
+            <div className="relative flex items-center justify-center">
               <motion.div
                 animate={{
-                  scale: [1, 1.2, 1],
-                  rotate: [0, 180, 360],
+                  scale: [1, 1.1, 1],
+                  rotate: [0, 360],
                 }}
                 transition={{
                   duration: 2,
                   repeat: Infinity,
-                  ease: "easeInOut",
+                  ease: "linear",
                 }}
-                className="w-16 h-16 border-4 border-emerald-500 border-t-emerald-100 rounded-[1rem] shadow-xl shadow-emerald-100"
+                className="w-16 h-16 border-4 border-emerald-500/20 border-t-emerald-500 rounded-full shadow-2xl"
               />
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.5 }}
-                className="absolute inset-0 flex items-center justify-center font-display font-black text-xs text-emerald-600"
-              >
-                MB
-              </motion.div>
+              <img 
+                src="/favicon.png" 
+                alt="Loading Logo" 
+                className="absolute w-8 h-8 object-contain"
+              />
             </div>
           </motion.div>
         )}

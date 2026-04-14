@@ -7,13 +7,22 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
-            <a href="#" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-lg shadow-emerald-200">
-                <ShoppingBag className="text-white w-6 h-6" />
+            <a href="#" className="flex items-center gap-4 group">
+              <div className="h-12 w-auto flex items-center transition-all duration-500 group-hover:scale-105">
+                <img 
+                  src="/favicon.png" 
+                  alt="MartBusy Logo" 
+                  className="h-full w-auto object-contain"
+                />
               </div>
-              <span className="text-2xl font-bold font-display tracking-tight text-slate-900">
-                MartBusy
-              </span>
+              <div className="flex flex-col">
+                <span className="text-2xl font-black font-display tracking-tight text-slate-900 leading-none">
+                  Mart<span className="text-emerald-500">Busy</span>
+                </span>
+                <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-slate-400 leading-none mt-1">
+                  Established 2026
+                </span>
+              </div>
             </a>
             <p className="text-slate-500 leading-relaxed">
               Empowering the next generation of e-commerce winners with cutting-edge technology and localized solutions.

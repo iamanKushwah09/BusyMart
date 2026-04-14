@@ -1,0 +1,36 @@
+<svg width="100%" viewBox="0 0 680 280" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">MartBusy Logo</title>
+  <desc style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">MartBusy logo with green M-arrow icon, wordmark and tagline</desc>
+
+  <defs>
+    
+  <mask id="imagine-text-gaps-gb1mgi" maskUnits="userSpaceOnUse"><rect x="0" y="0" width="680" height="280" fill="white"/><rect x="235.99998474121094" y="71.39776611328125" width="187.9530792236328" height="108.26951599121094" fill="black" rx="2"/><rect x="447.9999694824219" y="71.39776611328125" width="198.69606018066406" height="108.26951599121094" fill="black" rx="2"/><rect x="237.2444305419922" y="183.64404296875" width="385.9770202636719" height="21.378252029418945" fill="black" rx="2"/></mask></defs>
+
+  <!-- ICON: Green rounded square -->
+  <rect x="60" y="55" width="155" height="155" rx="36" fill="#22c55e" style="fill:rgb(34, 197, 94);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- M left vertical leg -->
+  <rect x="88" y="123" width="19" height="68" rx="5" fill="white" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- M right vertical leg -->
+  <rect x="168" y="123" width="19" height="68" rx="5" fill="white" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- M left diagonal -->
+  <polygon points="88,123 107,123 137.5,160 118.5,160" fill="white" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- M right diagonal -->
+  <polygon points="187,123 168,123 137.5,160 156.5,160" fill="white" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Arrow shaft -->
+  <rect x="129" y="87" width="17" height="58" rx="4" fill="white" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- Arrow head -->
+  <polygon points="115,103 137.5,73 160,103" fill="white" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- WORDMARK -->
+  <text x="240" y="155" font-family="'Helvetica Neue', Arial, sans-serif" font-size="74" font-weight="800" letter-spacing="-2.5" style="fill:rgb(240, 240, 240);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Helvetica Neue&quot;, Arial, sans-serif;font-size:74px;font-weight:800;text-anchor:start;dominant-baseline:auto">Mart</text>
+  <text x="452" y="155" font-family="'Helvetica Neue', Arial, sans-serif" font-size="74" font-weight="800" letter-spacing="-2.5" fill="#22c55e" style="fill:rgb(34, 197, 94);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Helvetica Neue&quot;, Arial, sans-serif;font-size:74px;font-weight:800;text-anchor:start;dominant-baseline:auto">Busy</text>
+
+  <!-- Divider line -->
+  <line x1="240" y1="172" x2="620" y2="172" stroke="#22c55e" stroke-width="1.5" opacity="0.4" mask="url(#imagine-text-gaps-gb1mgi)" style="fill:rgb(0, 0, 0);stroke:rgb(34, 197, 94);color:rgb(255, 255, 255);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.4;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Tagline — grey/muted color wapas -->
+  <text x="242" y="200" font-family="'Helvetica Neue', Arial, sans-serif" font-size="15.5" font-weight="400" letter-spacing="2.5" style="fill:rgb(170, 170, 170);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Helvetica Neue&quot;, Arial, sans-serif;font-size:15.5px;font-weight:400;text-anchor:start;dominant-baseline:auto">YOUR SMART E-COMMERCE PLATFORM</text>
+
+</svg>
