@@ -8,6 +8,7 @@ import Testimonials from './components/Testimonials';
 import EnquiryForm from './components/EnquiryForm';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
+import InteractiveBackground from './components/InteractiveBackground';
 import { motion, AnimatePresence } from 'framer-motion';
 
 function App() {
@@ -22,13 +23,14 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-slate-50 dark:bg-[#030712] text-slate-900 dark:text-white transition-colors duration-300 min-h-screen selection:bg-primary selection:text-white">
+    <div className="bg-white text-slate-900 transition-colors duration-300 min-h-screen selection:bg-emerald-500 selection:text-white relative">
+      <InteractiveBackground />
       <AnimatePresence>
         {loading && (
           <motion.div
             key="loader"
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-[#030712]"
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-white"
           >
             <div className="relative">
               <motion.div
@@ -41,15 +43,15 @@ function App() {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="w-16 h-16 border-4 border-primary border-t-secondary rounded-[1rem]"
+                className="w-16 h-16 border-4 border-emerald-500 border-t-emerald-100 rounded-[1rem] shadow-xl shadow-emerald-100"
               />
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
-                className="absolute inset-0 flex items-center justify-center font-display font-black text-xs"
+                className="absolute inset-0 flex items-center justify-center font-display font-black text-xs text-emerald-600"
               >
-                BM
+                MB
               </motion.div>
             </div>
           </motion.div>

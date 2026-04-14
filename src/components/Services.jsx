@@ -3,77 +3,137 @@ import { motion } from 'framer-motion';
 import { 
   Globe, 
   Settings, 
-  CreditCard, 
+  Zap, 
   Layers, 
-  TrendingUp, 
-  Headphones 
+  MessageSquare, 
+  Server, 
+  Cpu, 
+  FileSignature, 
+  ShieldCheck, 
+  Smartphone, 
+  ShoppingBag, 
+  BarChart3 
 } from 'lucide-react';
 import { cn } from '../lib/utils';
 
 const services = [
   {
     icon: <Globe className="w-10 h-10" />,
-    title: 'E-commerce Website Dev',
-    description: 'Custom, high-converting stores built with the latest technologies like Next.js and Headless CMS for maximum performance and SEO dominance.',
+    title: 'Website Development',
+    description: 'Specialized in web software development using AngularJS, NodeJS, ReactJS, Python, and Java to build high-performance applications.',
     color: 'from-blue-600 to-indigo-700',
+    accent: 'bg-blue-50 text-blue-700 border-blue-100',
     tag: 'Web Design'
   },
   {
     icon: <Settings className="w-10 h-10" />,
-    title: 'Store Setup & Management',
-    description: 'Complete hands-off setup from domain configuration to inventory management systems. We handle the tech, you handle the sales.',
-    color: 'from-purple-600 to-pink-700',
-    tag: 'Operations'
+    title: 'BUSY Accounting',
+    description: 'An integrated business accounting software for small and medium businesses with over 6 lakh successful users in India.',
+    color: 'from-emerald-600 to-green-700',
+    accent: 'bg-emerald-50 text-emerald-700 border-emerald-100',
+    tag: 'Accounting'
   },
   {
-    icon: <CreditCard className="w-10 h-10" />,
-    title: 'Gateway Integration',
-    description: 'Secure and seamless payment processing for global and local transactions. Support for 100+ currencies and multiple localized gateways.',
-    color: 'from-orange-600 to-red-700',
-    tag: 'Payments'
+    icon: <Zap className="w-10 h-10" />,
+    title: 'Tally Prime',
+    description: 'Technology solutions designed to make business owners efficient and empowered, focusing on critical business growth matters.',
+    color: 'from-orange-500 to-amber-600',
+    accent: 'bg-orange-50 text-orange-700 border-orange-100',
+    tag: 'Tally Solutions'
   },
   {
     icon: <Layers className="w-10 h-10" />,
-    title: 'Product Optimization',
-    description: 'SEO-driven product listings and high-quality visuals to boost your click-through rates. Turn visitors into loyal customers.',
-    color: 'from-green-600 to-emerald-700',
-    tag: 'Growth'
+    title: 'Marg ERP Solutions',
+    description: 'A leading software application provider specializing in GST, assisting businesses with a smoother and faster digital transition.',
+    color: 'from-purple-600 to-pink-700',
+    accent: 'bg-purple-50 text-purple-700 border-purple-100',
+    tag: 'ERP'
   },
   {
-    icon: <TrendingUp className="w-10 h-10" />,
-    title: 'Marketing Support',
-    description: 'Targeted advertising and social media strategies to drive traffic and increase sales. Precision targeting for premium audiences.',
-    color: 'from-cyan-600 to-blue-700',
-    tag: 'Advertising'
+    icon: <MessageSquare className="w-10 h-10" />,
+    title: 'WhatsApp API',
+    description: 'Secure business messaging services to send and receive WhatsApp messages and photos for professional team communication.',
+    color: 'from-green-500 to-emerald-600',
+    accent: 'bg-green-50 text-green-700 border-green-100',
+    tag: 'Marketing'
   },
   {
-    icon: <Headphones className="w-10 h-10" />,
-    title: '24/7 Premium Support',
-    description: 'Dedicated team to help you navigate through technical challenges around the clock. Your success is our 24/7 mission.',
-    color: 'from-fuchsia-600 to-purple-700',
-    tag: 'Support'
+    icon: <Server className="w-10 h-10" />,
+    title: 'Cloud Server',
+    description: 'Cloud solutions focused on simplifying business processes for future-ready companies with high-availability infrastructure.',
+    color: 'from-cyan-500 to-blue-600',
+    accent: 'bg-cyan-50 text-cyan-700 border-cyan-100',
+    tag: 'Cloud'
+  },
+  {
+    icon: <Cpu className="w-10 h-10" />,
+    title: 'Leadchainsystems',
+    description: 'Provides alert, bar, and Remote Desktop services to simplify complex business processes and increase operational efficiency.',
+    color: 'from-slate-600 to-slate-800',
+    accent: 'bg-slate-50 text-slate-700 border-slate-100',
+    tag: 'Business Systems'
+  },
+  {
+    icon: <FileSignature className="w-10 h-10" />,
+    title: 'Docsigner',
+    description: 'Digital signature software integrated with Busy accounting software that can also work independently for legal document signing.',
+    color: 'from-rose-500 to-pink-600',
+    accent: 'bg-rose-50 text-rose-700 border-rose-100',
+    tag: 'Security'
+  },
+  {
+    icon: <ShieldCheck className="w-10 h-10" />,
+    title: 'eMudhra CA',
+    description: 'Licensed Certifying Authority for digital signatures and authentication, providing trust in digital transactions and interactions.',
+    color: 'from-indigo-500 to-blue-600',
+    accent: 'bg-indigo-50 text-indigo-700 border-indigo-100',
+    tag: 'Authentication'
+  },
+  {
+    icon: <Smartphone className="w-10 h-10" />,
+    title: 'Flutter Development',
+    description: 'Google’s open-source technology for creating high-quality mobile, desktop, and web apps with a single modern codebase.',
+    color: 'from-sky-500 to-blue-600',
+    accent: 'bg-sky-50 text-sky-700 border-sky-100',
+    tag: 'App Dev'
+  },
+  {
+    icon: <ShoppingBag className="w-10 h-10" />,
+    title: 'Ecommerce Solutions',
+    description: 'Comprehensive ecommerce development process to structure and manage online retail businesses and digital marketplaces.',
+    color: 'from-yellow-500 to-orange-600',
+    accent: 'bg-yellow-50 text-yellow-700 border-yellow-100',
+    tag: 'Shopping'
+  },
+  {
+    icon: <BarChart3 className="w-10 h-10" />,
+    title: 'ERP Development',
+    description: 'Integrated platforms for managing large amounts of enterprise data within production environments and supply chains.',
+    color: 'from-red-600 to-rose-700',
+    accent: 'bg-red-50 text-red-700 border-red-100',
+    tag: 'Enterprise'
   }
 ];
 
 const Services = () => {
   return (
-    <section id="services" className="py-24 bg-slate-50 dark:bg-[#030712] relative transition-colors duration-300">
+    <section id="services" className="py-24 bg-white relative transition-colors duration-300">
       <div className="container mx-auto px-6">
         <div className="text-center mb-32 h-[30vh] flex flex-col justify-center sticky top-0 z-0">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-7xl font-black font-display mb-6 text-slate-900 dark:text-white transition-colors"
+            className="text-5xl md:text-7xl font-black font-display mb-6 text-slate-900 transition-colors"
           >
-            Services Tailored for <span className="text-gradient">Winners</span>
+            Services Tailored for <span className="text-emerald-500">Winners</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-slate-500 dark:text-white/50 text-xl max-w-2xl mx-auto transition-colors"
+            className="text-slate-500 text-xl max-w-2xl mx-auto transition-colors"
           >
             Everything you need to reach six, seven, and even eight-figure milestones in your e-commerce journey.
           </motion.p>
@@ -94,19 +154,19 @@ const Services = () => {
                 className="group relative"
               >
                 <div className={cn(
-                  "p-10 md:p-16 rounded-[3rem] border border-slate-200 dark:border-white/10 shadow-2xl relative overflow-hidden h-[60vh] md:h-[50vh] flex flex-col md:flex-row items-center gap-12 glass overflow-hidden",
-                  "hover:border-slate-300 dark:hover:border-white/20 transition-all duration-500"
+                  "p-10 md:p-16 rounded-[3rem] border shadow-2xl relative overflow-hidden h-[60vh] md:h-[50vh] flex flex-col md:flex-row items-center gap-12 glass overflow-hidden transition-all duration-500",
+                  "hover:scale-[1.01]"
                 )}>
                   {/* Decorative Gradient Background */}
                   <div className={cn("absolute inset-0 bg-gradient-to-br opacity-5 group-hover:opacity-10 transition-opacity", service.color)} />
                   
                   <div className="md:w-1/2 relative z-10 text-left">
-                    <span className="inline-block py-1 px-4 mb-6 rounded-full glass border border-slate-200 dark:border-white/10 text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-white/70">
+                    <span className={cn("inline-block py-1 px-4 mb-6 rounded-full border text-xs font-bold uppercase tracking-wider transition-colors", service.accent)}>
                       {service.tag}
                     </span>
-                    <h3 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-6 group-hover:text-gradient transition-all">{service.title}</h3>
-                    <p className="text-slate-600 dark:text-white/60 text-lg leading-relaxed mb-10 transition-colors">{service.description}</p>
-                    <button className="px-8 py-3 bg-primary dark:bg-white text-white dark:text-black font-bold rounded-xl hover:scale-105 transition-transform flex items-center gap-2 group-hover:shadow-lg">
+                    <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-6 group-hover:text-slate-800 transition-all">{service.title}</h3>
+                    <p className="text-slate-600 text-lg leading-relaxed mb-10 transition-colors">{service.description}</p>
+                    <button className={cn("px-8 py-3 text-white font-bold rounded-xl transition-all flex items-center gap-2 shadow-lg", "bg-slate-900 shadow-slate-200")}>
                       Explore Details
                     </button>
                   </div>

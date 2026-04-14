@@ -14,8 +14,8 @@ const EnquiryForm = () => {
     formData.append("email", data.email);
     formData.append("phone", data.phone);
     formData.append("message", data.message);
-    formData.append("from_name", "BusyMart Enquiry");
-    formData.append("subject", `New BusyMart Enquiry from ${data.name}`);
+    formData.append("from_name", "MartBusy Enquiry");
+    formData.append("subject", `New MartBusy Enquiry from ${data.name}`);
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -36,30 +36,30 @@ const EnquiryForm = () => {
   };
 
   return (
-    <section id="contact" className="py-24 relative overflow-hidden">
+    <section id="contact" className="py-24 relative overflow-hidden bg-white">
       <div className="container mx-auto px-6">
-        <div className="max-w-5xl mx-auto glass rounded-[3rem] p-8 md:p-16 border-white/10 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent hidden lg:block" />
+        <div className="max-w-5xl mx-auto glass rounded-[3rem] p-8 md:p-16 border-emerald-50 relative overflow-hidden shadow-2xl">
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-emerald-50/30 to-transparent hidden lg:block" />
           
           <div className="grid lg:grid-cols-2 gap-16 relative z-10">
             <div>
-              <h2 className="text-4xl md:text-5xl font-black font-display mb-6 text-slate-900 dark:text-white transition-colors">Let's Build Something <span className="text-primary">Extraordinary</span></h2>
-              <p className="text-lg text-slate-600 dark:text-white/60 mb-8 transition-colors">
+              <h2 className="text-4xl md:text-5xl font-black font-display mb-6 text-slate-900 transition-colors">Let's Build Something <span className="text-emerald-500">Extraordinary</span></h2>
+              <p className="text-lg text-slate-600 mb-8 transition-colors">
                 Ready to take your business to the next level? Fill out the form and our strategies will get back to you within 24 hours.
               </p>
               
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                  <div className="w-12 h-12 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600 border border-emerald-100 shadow-sm">
                     <CheckCircle2 className="w-6 h-6" />
                   </div>
-                  <p className="font-medium text-slate-700 dark:text-white/80 transition-colors">Free Consultation</p>
+                  <p className="font-semibold text-slate-700 transition-colors">Free Consultation</p>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+                  <div className="w-12 h-12 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600 border border-emerald-100 shadow-sm">
                     <CheckCircle2 className="w-6 h-6" />
                   </div>
-                  <p className="font-medium text-slate-700 dark:text-white/80 transition-colors">Custom Strategy Plan</p>
+                  <p className="font-semibold text-slate-700 transition-colors">Custom Strategy Plan</p>
                 </div>
               </div>
             </div>
@@ -69,62 +69,62 @@ const EnquiryForm = () => {
                 <motion.div 
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="h-full flex flex-col items-center justify-center text-center space-y-4"
+                  className="h-full flex flex-col items-center justify-center text-center space-y-4 py-12"
                 >
-                  <div className="w-20 h-20 rounded-full bg-green-500/20 flex items-center justify-center text-green-500 mb-4">
-                    <CheckCircle2 className="w-10 h-10" />
+                  <div className="w-24 h-24 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 mb-4 shadow-inner">
+                    <CheckCircle2 className="w-12 h-12" />
                   </div>
-                  <h3 className="text-2xl font-bold">Message Sent!</h3>
-                  <p className="text-white/60">We'll be in touch very soon. Thank you for choosing BusyMart.</p>
+                  <h3 className="text-3xl font-bold text-slate-900">Message Sent!</h3>
+                  <p className="text-slate-500 max-w-xs mx-auto">We'll be in touch very soon. Thank you for choosing MartBusy.</p>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-slate-500 dark:text-white/50 px-1 transition-colors">Full Name</label>
+                      <label className="text-sm font-bold text-slate-500 px-1">Full Name</label>
                       <input 
                         {...register("name", { required: true })}
-                        className="w-full bg-white/50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl py-4 px-6 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all shadow-sm"
+                        className="w-full bg-slate-50 border border-slate-100 rounded-2xl py-4 px-6 text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-200 focus:bg-white transition-all shadow-sm placeholder:text-slate-400"
                         placeholder="John Doe"
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-slate-500 dark:text-white/50 px-1 transition-colors">Email Address</label>
+                      <label className="text-sm font-bold text-slate-500 px-1">Email Address</label>
                       <input 
                         {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
-                        className="w-full bg-white/50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl py-4 px-6 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all shadow-sm"
+                        className="w-full bg-slate-50 border border-slate-100 rounded-2xl py-4 px-6 text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-200 focus:bg-white transition-all shadow-sm placeholder:text-slate-400"
                         placeholder="john@example.com"
                       />
                     </div>
                   </div>
                   
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-white/50 px-1">Phone Number</label>
+                    <label className="text-sm font-bold text-slate-500 px-1">Phone Number</label>
                     <input 
                       {...register("phone", { required: true })}
-                      className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-6 text-white focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                      className="w-full bg-slate-50 border border-slate-100 rounded-2xl py-4 px-6 text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-200 focus:bg-white transition-all shadow-sm placeholder:text-slate-400"
                       placeholder="+1 (555) 000-0000"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-white/50 px-1">Your Message</label>
+                    <label className="text-sm font-bold text-slate-500 px-1">Your Message</label>
                     <textarea 
                       {...register("message", { required: true })}
                       rows="4"
-                      className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-6 text-white focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all resize-none"
+                      className="w-full bg-slate-50 border border-slate-100 rounded-2xl py-4 px-6 text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-200 focus:bg-white transition-all resize-none shadow-sm placeholder:text-slate-400"
                       placeholder="Tell us about your project..."
                     />
                   </div>
 
                   <button 
                     disabled={isSubmitting}
-                    className="w-full py-4 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-2xl hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/20 disabled:opacity-50"
+                    className="w-full py-4 bg-primary text-white font-bold rounded-2xl hover:bg-secondary active:scale-[0.98] transition-all flex items-center justify-center gap-2 shadow-xl shadow-emerald-100 disabled:opacity-50 mt-4"
                   >
                     {isSubmitting ? (
                       <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                     ) : (
-                      <>Send Message <Send className="w-5 h-5" /></>
+                      <>Send Message <Send className="w-5 h-5 transition-transform group-hover:translate-x-1" /></>
                     )}
                   </button>
                 </form>

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ShoppingBag } from 'lucide-react';
 import { cn } from '../lib/utils';
-import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,8 +35,8 @@ const Navbar = () => {
           <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center">
             <ShoppingBag className="text-white w-6 h-6" />
           </div>
-          <span className="text-2xl font-bold font-display tracking-tight text-slate-900 dark:text-white transition-colors">
-            BusyMart
+          <span className="text-2xl font-bold font-display tracking-tight text-slate-800 transition-colors">
+            MartBusy
           </span>
         </a>
 
@@ -47,20 +46,19 @@ const Navbar = () => {
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-slate-600 dark:text-white/70 hover:text-primary dark:hover:text-white transition-colors"
+              className="text-sm font-medium text-slate-600 hover:text-primary transition-colors"
             >
               {link.name}
             </a>
           ))}
-          <ThemeToggle />
-          <a href="#contact" className="px-6 py-2.5 bg-primary dark:bg-white text-white dark:text-black font-semibold rounded-full hover:scale-105 active:scale-95 transition-all">
+          <a href="#contact" className="px-6 py-2.5 bg-primary text-white font-semibold rounded-full hover:shadow-lg hover:shadow-emerald-200 hover:-translate-y-0.5 active:scale-95 transition-all">
             Contact Us
           </a>
         </div>
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-slate-900 dark:text-white"
+          className="md:hidden text-slate-800"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -81,13 +79,13 @@ const Navbar = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-lg font-medium text-slate-600 dark:text-white/70 hover:text-primary dark:hover:text-white"
+                  className="text-lg font-medium text-slate-600 hover:text-primary"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.name}
                 </a>
               ))}
-              <a href="#contact" className="w-full py-3 bg-primary dark:bg-white text-white dark:text-black font-semibold rounded-xl text-center">
+              <a href="#contact" className="w-full py-3 bg-primary text-white font-semibold rounded-xl text-center">
                 Get Started
               </a>
             </div>
