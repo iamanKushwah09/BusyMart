@@ -19,9 +19,9 @@ const Footer = () => {
                 <span className="text-2xl font-black font-display tracking-tight text-slate-900 leading-none">
                   Mart<span className="text-emerald-500">Busy</span>
                 </span>
-                <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-slate-400 leading-none mt-1">
+                {/* <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-slate-400 leading-none mt-1">
                   Established 2026
-                </span>
+                </span> */}
               </div>
             </a>
             <p className="text-slate-500 leading-relaxed">
@@ -63,15 +63,15 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-center gap-3 text-slate-500">
                 <MapPin size={18} className="text-emerald-600" />
-                <span className="font-medium">123 Digital Square, IND</span>
+                <span className="font-medium">AGRA,Uttar Pradesh , Pincode-201308</span>
               </li>
               <li className="flex items-center gap-3 text-slate-500">
                 <Phone size={18} className="text-emerald-600" />
-                <span className="font-medium">+91 123 456 7890</span>
+                <span className="font-medium">+91 8076 901 732</span>
               </li>
               <li className="flex items-center gap-3 text-slate-500">
                 <Mail size={18} className="text-emerald-600" />
-                <span className="font-medium">hello@martbusy.com</span>
+                <span className="font-medium">logicfirst2022@gmail.com</span>
               </li>
             </ul>
           </div>

@@ -4,24 +4,24 @@ import { Star, Quote } from 'lucide-react';
 
 const testimonials = [
   {
-    name: 'Sarah Jenkins',
-    role: 'CEO, Bloom Fashion',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200',
-    content: 'MartBusy transformed our boutique into a global powerhouse. Their integration services are next-level!',
+    name: 'Atul Rathore',
+    role: 'MERN Stack Developer',
+    image: 'public/Atul.jpeg',
+    content: 'Built with modern MERN technologies, MartBusy offers a fast, scalable, and smooth experience. It handles complex operations effortlessly while maintaining a clean interface.',
     rating: 5
   },
   {
-    name: 'David Chen',
-    role: 'Founder, TechGadget',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200',
-    content: 'The 24/7 support is a lifesaver. We never have to worry about downtime during our big sales events.',
+    name: 'Sahil Kumar',
+    role: '.Net Developer',
+    image: 'public/Sahil.jpeg',
+    content: 'A powerful and dependable solution built with strong backend architecture. MartBusy ensures security, performance, and consistency across all operations.',
     rating: 5
   },
   {
-    name: 'Elena Rodriguez',
-    role: 'Director, EcoStay',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200',
-    content: 'Cleanest UI we have ever worked with. Our customers love the mobile shopping experience.',
+    name: 'Aman Kushwah',
+    role: 'Lead Developer',
+    image: 'public/Aman.jpg',
+    content: 'An exceptional platform with a clean, intuitive interface and powerful performance. MartBusy has elevated our digital experience and made customer interactions smoother than ever.',
     rating: 5
   }
 ];
@@ -31,7 +31,7 @@ const Testimonials = () => {
     <section className="py-24 bg-mesh overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black font-display mb-4 text-slate-900">Trusted by Market Leaders</h2>
+          <h2 className="text-4xl md:text-5xl font-black font-display mb-4 text-slate-900">Our Developers</h2>
           <div className="flex justify-center gap-1">
             {[1,2,3,4,5].map(i => <Star key={i} className="w-5 h-5 text-emerald-500 fill-emerald-500" />)}
           </div>

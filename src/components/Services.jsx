@@ -57,50 +57,82 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="group relative p-8 rounded-[2.5rem] bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-2xl hover:shadow-emerald-100 hover:-translate-y-2 transition-all duration-500"
-            >
-              <div className="absolute top-8 right-8 text-slate-100 group-hover:text-emerald-50 transition-colors">
-                <img src="/favicon.png" alt="MB" className="w-12 h-12 opacity-5" />
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="group relative p-8 md:p-20 rounded-[3rem] md:rounded-[5rem] bg-linear-to-br from-slate-50 to-white border border-emerald-50 hover:shadow-3xl hover:shadow-emerald-100/50 transition-all duration-700 overflow-hidden"
+          >
+            {/* Abstract Background Decoration */}
+            <div className="absolute -top-24 -right-24 w-64 h-64 bg-emerald-100/30 rounded-full blur-3xl group-hover:bg-emerald-200/40 transition-colors duration-700" />
+            <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-green-100/30 rounded-full blur-3xl group-hover:bg-green-200/40 transition-colors duration-700" />
+            
+            <div className="grid lg:grid-cols-2 gap-12 items-center relative z-10">
+              <div>
+                <div className="w-20 h-20 rounded-3xl bg-emerald-500 text-white flex items-center justify-center mb-8 shadow-2xl shadow-emerald-200 group-hover:scale-110 transition-transform duration-500">
+                  <Globe className="w-10 h-10" />
+                </div>
+                <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">
+                  All-in-One <br/> 
+                  <span className="text-emerald-500">E-commerce</span> Solution
+                </h3>
+                <p className="text-xl text-slate-500 font-medium leading-relaxed mb-10">
+                  We build, optimize, and scale your digital empire. From high-performance store setup to advanced AI-driven marketing strategies, we handle the technology so you can focus on the growth.
+                </p>
+                
+                <div className="grid grid-cols-2 gap-6 mb-12">
+                  {[
+                    "Custom Storefronts",
+                    "SEO Optimization",
+                    "AI Integration",
+                    "Growth Analytics",
+                    "Payment Gateways",
+                    "24/7 Premium Support"
+                  ].map((feature, i) => (
+                    <div key={i} className="flex items-center gap-3 text-slate-700 font-bold">
+                      <div className="w-8 h-8 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600">
+                        <ShieldCheck size={18} />
+                      </div>
+                      {feature}
+                    </div>
+                  ))}
+                </div>
+
+                <a href="#contact" className="inline-flex items-center gap-3 px-8 py-5 bg-emerald-600 text-white font-black rounded-2xl hover:bg-emerald-700 transition-all shadow-xl shadow-emerald-100 group/btn">
+                  Start Your Journey <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
+                </a>
               </div>
 
-              <div className={cn(
-                "w-16 h-16 rounded-2xl flex items-center justify-center mb-8 transition-transform group-hover:scale-110 duration-500",
-                service.color === 'emerald' ? "bg-emerald-500 text-white shadow-lg shadow-emerald-200" :
-                service.color === 'blue' ? "bg-blue-500 text-white shadow-lg shadow-blue-200" :
-                "bg-rose-500 text-white shadow-lg shadow-rose-200"
-              )}>
-                {service.icon}
-              </div>
-
-              <h3 className="text-2xl font-black text-slate-900 mb-4 group-hover:text-emerald-600 transition-colors">
-                {service.title}
-              </h3>
-              <p className="text-slate-500 font-medium leading-relaxed mb-6">
-                {service.desc}
-              </p>
-
-              <div className="space-y-3 mb-8">
-                {service.features.map((feature, fIndex) => (
-                  <div key={fIndex} className="flex items-center gap-2 text-sm font-bold text-slate-700">
-                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                    {feature}
+              <div className="relative">
+                <div className="aspect-square rounded-[3rem] p-4 border-emerald-100 overflow-hidden shadow-2xl">
+                  <img 
+                    src="https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=2000" 
+                    alt="Success"
+                    className="w-full h-full object-cover rounded-[2.5rem] opacity-90 group-hover:scale-105 transition-transform duration-1000"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-emerald-500/20 to-transparent" />
+                </div>
+                
+                {/* Floating badge */}
+                <motion.div 
+                  initial={{ x: 20, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  className="absolute -bottom-6 -right-6 p-6 bg-white rounded-3xl shadow-2xl border border-emerald-50 hidden md:block"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-2xl bg-emerald-500 text-white flex items-center justify-center">
+                      <Zap className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-slate-400 font-bold uppercase tracking-wider">Conversion</p>
+                      <p className="text-2xl font-black text-slate-900">+127%</p>
+                    </div>
                   </div>
-                ))}
+                </motion.div>
               </div>
-
-              <button className="flex items-center gap-2 text-sm font-black text-slate-900 group-hover:text-emerald-600 transition-all">
-                Learn More <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
-            </motion.div>
-          ))}
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -20,7 +20,6 @@ const Navbar = () => {
     { name: 'About', href: '#about' },
     { name: 'Services', href: '#services' },
     { name: 'Features', href: '#features' },
-    { name: 'Contact', href: '#contact' },
   ];
 
   return (
@@ -42,9 +41,6 @@ const Navbar = () => {
           <div className="flex flex-col">
             <span className="text-2xl font-black font-display tracking-tight text-slate-900 leading-none">
               Mart<span className="text-emerald-500">Busy</span>
-            </span>
-            <span className="text-[10px] uppercase tracking-[0.25em] font-bold text-slate-400 leading-none mt-1 group-hover:text-emerald-400 transition-colors">
-              Digital Empire
             </span>
           </div>
         </a>

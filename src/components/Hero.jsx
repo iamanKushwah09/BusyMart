@@ -45,7 +45,7 @@ const Hero = () => {
               Get Started Free <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
             <a 
-              href="https://wa.me/918989218206?text=Hello%20MartBusy!%20I'm%20interested%20in%20your%20services." 
+              href="https://wa.me/918076901732?text=Hello%20MartBusy!%20I'm%20interested%20in%20your%20services." 
               target="_blank" 
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-8 py-4 glass text-slate-900 font-bold rounded-2xl border-emerald-100 hover:bg-emerald-50/50 transition-all flex items-center justify-center gap-2"

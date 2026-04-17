@@ -7,30 +7,30 @@ const EnquiryForm = () => {
   const { register, handleSubmit, formState: { errors, isSubmitting, isSubmitSuccessful } } = useForm();
 
   const onSubmit = async (data) => {
-    // Using Web3Forms for target email amankushwah073@gmail.com
-    const formData = new FormData();
-    formData.append("access_key", "73b3e244-a526-4444-9694-82a129d59265"); // Note: User should replace with their own key at web3forms.com
-    formData.append("name", data.name);
-    formData.append("email", data.email);
-    formData.append("phone", data.phone);
-    formData.append("message", data.message);
-    formData.append("from_name", "MartBusy Enquiry");
-    formData.append("subject", `New MartBusy Enquiry from ${data.name}`);
-
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const response = await fetch("https://formsubmit.co/ajax/logicfirst2022@gmail.com", {
         method: "POST",
-        body: formData
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          message: data.message,
+          _subject: `New LogicFirst Enquiry from ${data.name}`,
+          _template: "table"
+        })
       });
-      const res = await response.json();
-      if (res.success) {
-        console.log("Success", res);
-      } else {
-        console.log("Error", res);
-        throw new Error(res.message);
+      
+      const result = await response.json();
+      if (result.success !== "true") {
+        throw new Error("Submission failed");
       }
     } catch (error) {
-      alert("Something went wrong! Please try again or contact us on WhatsApp.");
+      console.error("Form error:", error);
+      alert("There was an issue sending your message. Please try WhatsApp.");
       throw error;
     }
   };
@@ -75,10 +75,22 @@ const EnquiryForm = () => {
                     <CheckCircle2 className="w-12 h-12" />
                   </div>
                   <h3 className="text-3xl font-bold text-slate-900">Message Sent!</h3>
-                  <p className="text-slate-500 max-w-xs mx-auto">We'll be in touch very soon. Thank you for choosing MartBusy.</p>
+                  <p className="text-slate-500 max-w-xs mx-auto mb-6">We'll be in touch very soon via logicfirst2022@gmail.com. Thank you for choosing MartBusy.</p>
+                  <a 
+                    href={`https://wa.me/918076901732?text=${encodeURIComponent(`Hi, I just submitted an enquiry on MartBusy.\nName: ${localStorage.getItem('last_enquiry_name') || 'Customer'}\nMessage: ${localStorage.getItem('last_enquiry_msg') || ''}`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-6 py-3 bg-[#25D366] text-white font-bold rounded-xl hover:bg-[#128C7E] transition-all shadow-lg"
+                  >
+                    Follow up on WhatsApp
+                  </a>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                <form onSubmit={handleSubmit((data) => {
+                  localStorage.setItem('last_enquiry_name', data.name);
+                  localStorage.setItem('last_enquiry_msg', data.message);
+                  onSubmit(data);
+                })} className="space-y-6">
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-sm font-bold text-slate-500 px-1">Full Name</label>
