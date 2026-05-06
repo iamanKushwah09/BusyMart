@@ -9,19 +9,18 @@ import EnquiryForm from './components/EnquiryForm';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import InteractiveBackground from './components/InteractiveBackground';
+import BusyIntegration from './components/BusyIntegration';
 import { motion, AnimatePresence } from 'framer-motion';
 
 function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate initial load
     const timer = setTimeout(() => {
       setLoading(false);
     }, 2000);
     return () => clearTimeout(timer);
   }, []);
-
   return (
     <div className="bg-white text-slate-900 transition-colors duration-300 min-h-screen selection:bg-emerald-500 selection:text-white relative">
       <InteractiveBackground />
@@ -60,6 +59,7 @@ function App() {
         <Hero />
         <About />
         <Services />
+        <BusyIntegration />
         <Features />
         <Testimonials />
         <EnquiryForm />

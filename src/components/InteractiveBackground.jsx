@@ -10,6 +10,9 @@ const InteractiveBackground = () => {
   const smoothX = useSpring(mouseX, springConfig);
   const smoothY = useSpring(mouseY, springConfig);
 
+  const secondaryX = useSpring(mouseX, { damping: 40, stiffness: 100 });
+  const secondaryY = useSpring(mouseY, { damping: 40, stiffness: 100 });
+
   useEffect(() => {
     const handleMouseMove = (e) => {
       // Offset by half the blob size to center it
@@ -35,8 +38,8 @@ const InteractiveBackground = () => {
       {/* Secondary blob with different lag */}
       <motion.div
         style={{
-          x: useSpring(mouseX, { damping: 40, stiffness: 100 }),
-          y: useSpring(mouseY, { damping: 40, stiffness: 100 }),
+          x: secondaryX,
+          y: secondaryY,
         }}
         className="absolute w-[300px] h-[300px] bg-green-50/40 rounded-full blur-[80px]"
       />

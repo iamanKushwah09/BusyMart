@@ -28,11 +28,26 @@ const Footer = () => {
               Empowering the next generation of e-commerce winners with cutting-edge technology and localized solutions.
             </p>
             <div className="flex gap-4">
-              {[Send, Share2, Heart, Globe].map((Icon, i) => (
-                <a key={i} href="#" className="w-10 h-10 rounded-xl bg-white border border-emerald-100 flex items-center justify-center text-emerald-600 hover:bg-emerald-600 hover:text-white transition-all shadow-sm">
-                  <Icon size={20} />
-                </a>
-              ))}
+              <a href="https://www.facebook.com/share/18UmjRhmaM/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white border border-emerald-100 flex items-center justify-center text-emerald-600 hover:bg-emerald-600 hover:text-white transition-all shadow-sm">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg>
+              </a>
+              <a href="https://wa.me/918076901732" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white border border-emerald-100 flex items-center justify-center text-emerald-600 hover:bg-emerald-600 hover:text-white transition-all shadow-sm">
+                <Send size={20} />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-xl bg-white border border-emerald-100 flex items-center justify-center text-emerald-600 hover:bg-emerald-600 hover:text-white transition-all shadow-sm">
+                <Globe size={20} />
+              </a>
             </div>
           </div>
 

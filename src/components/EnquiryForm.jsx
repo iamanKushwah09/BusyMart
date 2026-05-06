@@ -43,7 +43,7 @@ const EnquiryForm = () => {
           
           <div className="grid lg:grid-cols-2 gap-16 relative z-10">
             <div>
-              <h2 className="text-4xl md:text-5xl font-black font-display mb-6 text-slate-900 transition-colors">Let's Build Something <span className="text-emerald-500">Extraordinary</span></h2>
+              <h2 className="text-4xl md:text-5xl font-black font-display mb-6 text-slate-900 transition-colors">Let&apos;s Build Something <span className="text-emerald-500">Extraordinary</span></h2>
               <p className="text-lg text-slate-600 mb-8 transition-colors">
                 Ready to take your business to the next level? Fill out the form and our strategies will get back to you within 24 hours.
               </p>
@@ -75,7 +75,7 @@ const EnquiryForm = () => {
                     <CheckCircle2 className="w-12 h-12" />
                   </div>
                   <h3 className="text-3xl font-bold text-slate-900">Message Sent!</h3>
-                  <p className="text-slate-500 max-w-xs mx-auto mb-6">We'll be in touch very soon via logicfirst2022@gmail.com. Thank you for choosing MartBusy.</p>
+                  <p className="text-slate-500 max-w-xs mx-auto mb-6">We&apos;ll be in touch very soon via logicfirst2022@gmail.com. Thank you for choosing MartBusy.</p>
                   <a 
                     href={`https://wa.me/918076901732?text=${encodeURIComponent(`Hi, I just submitted an enquiry on MartBusy.\nName: ${localStorage.getItem('last_enquiry_name') || 'Customer'}\nMessage: ${localStorage.getItem('last_enquiry_msg') || ''}`)}`}
                     target="_blank"

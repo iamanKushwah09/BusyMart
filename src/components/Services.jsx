@@ -14,7 +14,7 @@ import { cn } from '../lib/utils';
 const services = [
   {
     icon: <Globe className="w-8 h-8" />,
-    title: 'E-commerce Empires',
+    title: 'E-commerce',
     desc: 'Custom high-performance stores built with Next.js for maximum conversion.',
     color: 'emerald',
     features: ['Headless Commerce', 'Ultra-Fast Load', 'AI Integration']
@@ -78,16 +78,14 @@ const Services = () => {
                   <span className="text-emerald-500">E-commerce</span> Solution
                 </h3>
                 <p className="text-xl text-slate-500 font-medium leading-relaxed mb-10">
-                  We build, optimize, and scale your digital empire. From high-performance store setup to advanced AI-driven marketing strategies, we handle the technology so you can focus on the growth.
+                     A powerful digital ecosystem fully integrated with BUSY Accounting Software. Seamlessly manage Item & Account Masters, Party Ledgers, and Bill Receivables while enabling your salesmen and customers to book sale orders online with real-time synchronization.
                 </p>
                 
                 <div className="grid grid-cols-2 gap-6 mb-12">
                   {[
                     "Custom Storefronts",
                     "SEO Optimization",
-                    "AI Integration",
                     "Growth Analytics",
-                    "Payment Gateways",
                     "24/7 Premium Support"
                   ].map((feature, i) => (
                     <div key={i} className="flex items-center gap-3 text-slate-700 font-bold">

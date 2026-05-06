@@ -16,11 +16,11 @@ const About = () => {
           >
             <h2 className="text-sm font-bold uppercase tracking-widest text-emerald-600 mb-4">About MartBusy</h2>
             <h3 className="text-4xl md:text-5xl font-black font-display mb-8 leading-tight text-slate-900 transition-colors">
-              We Don't Just Build Stores, <br />
-              <span className="text-emerald-500">We Build Empires.</span>
+              We Don&apos;t Just Build Stores, <br />
+              <span className="text-emerald-500">We Build Belief.</span>
             </h3>
             <p className="text-lg text-slate-600 mb-8 leading-relaxed transition-colors">
-              At MartBusy, we understand that e-commerce is more than just a website—it's your vision brought to life. 
+              At MartBusy, we understand that e-commerce is more than just a website—it&apos;s your vision brought to life. 
               Our mission is to eliminate technical barriers and provide you with a high-performance ecosystem 
               designed for massive scale and seamless management.
             </p>
