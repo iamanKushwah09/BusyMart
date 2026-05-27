@@ -25,10 +25,10 @@ const Footer = () => {
               </div>
             </a>
             <p className="text-slate-500 leading-relaxed">
-              Empowering the next generation of e-commerce winners with cutting-edge technology and localized solutions.
+              MartBusy – Your Ultimate Destination for Smart, Seamless, and Stylish Online Shopping.
             </p>
             <div className="flex gap-4">
-              <a href="https://www.facebook.com/share/18UmjRhmaM/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white border border-emerald-100 flex items-center justify-center text-emerald-600 hover:bg-emerald-600 hover:text-white transition-all shadow-sm">
+              {/* <a href="https://www.facebook.com/share/18UmjRhmaM/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white border border-emerald-100 flex items-center justify-center text-emerald-600 hover:bg-emerald-600 hover:text-white transition-all shadow-sm">
                 <svg
                   width="20"
                   height="20"
@@ -41,7 +41,7 @@ const Footer = () => {
                 >
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                 </svg>
-              </a>
+              </a> */}
               <a href="https://wa.me/918076901732" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white border border-emerald-100 flex items-center justify-center text-emerald-600 hover:bg-emerald-600 hover:text-white transition-all shadow-sm">
                 <Send size={20} />
               </a>
@@ -78,12 +78,12 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-center gap-3 text-slate-500">
                 <MapPin size={18} className="text-emerald-600" />
-                <span className="font-medium">AGRA,Uttar Pradesh , Pincode-201308</span>
+                <span className="font-medium">E1/2 Shashi garden, mayur vihar phase 1, delhi, India 110091</span>
               </li>
-              <li className="flex items-center gap-3 text-slate-500">
+              {/* <li className="flex items-center gap-3 text-slate-500">
                 <Phone size={18} className="text-emerald-600" />
                 <span className="font-medium">+91 8076 901 732</span>
-              </li>
+              </li> */}
               <li className="flex items-center gap-3 text-slate-500">
                 <Mail size={18} className="text-emerald-600" />
                 <span className="font-medium">logicfirst2022@gmail.com</span>
@@ -93,7 +93,16 @@ const Footer = () => {
         </div>
 
         <div className="pt-8 border-t border-emerald-100 flex flex-col md:flex-row items-center justify-between gap-4 text-slate-400 text-sm font-medium">
-          <p>© {new Date().getFullYear()} <a href="https://logicfirst.in" className="hover:text-green-600">LogicFirst Technologies</a> All rights reserved.</p>
+          <p>
+            © {new Date().getFullYear()} <a href="https://logicfirst.in" className="hover:text-green-600">LogicFirst Technologies</a>. All rights reserved
+            <span className="relative inline-block cursor-default select-none group/egg">
+              .
+              <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 text-[11px] font-bold text-white bg-slate-900 rounded-lg opacity-0 group-hover/egg:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap z-50 shadow-md transform translate-y-1 group-hover/egg:translate-y-0">
+                Developed by Aman Kushwah
+                <span className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-slate-900" />
+              </span>
+            </span>
+          </p>
           <div className="flex gap-8">
             <a href="#" className="hover:text-emerald-600 transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-emerald-600 transition-colors">Terms of Service</a>

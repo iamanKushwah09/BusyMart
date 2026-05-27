@@ -84,7 +84,7 @@ const Services = () => {
                 <div className="grid grid-cols-2 gap-6 mb-12">
                   {[
                     "Custom Storefronts",
-                    "SEO Optimization",
+                    // "SEO Optimization",
                     "Growth Analytics",
                     "24/7 Premium Support"
                   ].map((feature, i) => (

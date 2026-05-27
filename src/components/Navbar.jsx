@@ -6,21 +6,52 @@ import { cn } from '../lib/utils';
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('#home');
+
+  const navLinks = [
+    { name: 'Home', href: '#home' },
+    { name: 'About', href: '#about' },
+    { name: 'Services', href: '#services' },
+    { name: 'Features', href: '#features' },
+    { name: 'Contact Us', href: '#contact' },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
+
+      const scrollPosition = window.scrollY + 200; // offset for navbar
+
+      // Handle bottom of page (Contact section)
+      const isAtBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 100;
+      if (isAtBottom) {
+        setActiveSection('#contact');
+        return;
+      }
+
+      let currentSection = '#home';
+      for (const link of navLinks) {
+        const id = link.href.substring(1);
+        const el = document.getElementById(id);
+        if (el) {
+          const top = el.offsetTop;
+          if (scrollPosition >= top) {
+            currentSection = link.href;
+          }
+        }
+      }
+      setActiveSection(currentSection);
     };
+
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Call once on mount
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: 'Home', href: '#' },
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Features', href: '#features' },
-  ];
+  const handleNavLinkClick = (href) => {
+    setActiveSection(href);
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <nav
@@ -30,7 +61,7 @@ const Navbar = () => {
       )}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-3.5 group">
+        <a href="#home" onClick={() => handleNavLinkClick('#home')} className="flex items-center gap-3.5 group">
           <div className="relative h-10 md:h-11 flex items-center justify-center transition-all duration-500 group-hover:scale-105">
             <img 
               src="/favicon.png" 
@@ -47,18 +78,29 @@ const Navbar = () => {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center space-x-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="text-sm font-medium text-slate-600 hover:text-primary transition-colors"
-            >
-              {link.name}
-            </a>
-          ))}
-          <a href="#contact" className="px-6 py-2.5 bg-primary text-white font-semibold rounded-full hover:shadow-lg hover:shadow-emerald-200 hover:-translate-y-0.5 active:scale-95 transition-all">
-            Contact Us
-          </a>
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.href;
+            return (
+              <a
+                key={link.name}
+                href={link.href}
+                className={cn(
+                  'relative text-sm font-semibold transition-colors duration-300 py-1.5 px-1',
+                  isActive ? 'text-primary' : 'text-slate-600 hover:text-slate-900'
+                )}
+                onClick={() => handleNavLinkClick(link.href)}
+              >
+                {link.name}
+                {isActive && (
+                  <motion.span
+                    layoutId="activeNavBorder"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-full"
+                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                  />
+                )}
+              </a>
+            );
+          })}
         </div>
 
         {/* Mobile Toggle */}
@@ -80,19 +122,22 @@ const Navbar = () => {
             className="absolute top-full left-0 right-0 glass border-b md:hidden"
           >
             <div className="flex flex-col p-6 space-y-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="text-lg font-medium text-slate-600 hover:text-primary"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.name}
-                </a>
-              ))}
-              <a href="#contact" className="w-full py-3 bg-primary text-white font-semibold rounded-xl text-center">
-                Get Started
-              </a>
+              {navLinks.map((link) => {
+                const isActive = activeSection === link.href;
+                return (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    className={cn(
+                      'text-lg font-semibold transition-all duration-200 py-2 px-4 rounded-xl block',
+                      isActive ? 'text-primary bg-emerald-50/60' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                    )}
+                    onClick={() => handleNavLinkClick(link.href)}
+                  >
+                    {link.name}
+                  </a>
+                );
+              })}
             </div>
           </motion.div>
         )}

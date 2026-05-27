@@ -1,11 +1,26 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, MessageSquare, ShieldCheck, Zap, Globe } from 'lucide-react';
 import ParticleBackground from './ParticleBackground';
 
 const Hero = () => {
+  const [index, setIndex] = useState(0);
+  const words = [
+    "Business Effortlessly",
+    "Store Instantly",
+    "Sales Automatically",
+    "Brand Globally"
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % words.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-transparent">
+    <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-transparent">
       <ParticleBackground />
       {/* Background elements */}
       <div className="absolute top-1/4 -left-20 w-80 h-80 bg-emerald-100/40 rounded-full blur-[120px] animate-pulse-slow" />
@@ -27,11 +42,23 @@ const Hero = () => {
             </div>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-black font-display mb-8 tracking-tight leading-[1.1] text-slate-900 transition-colors">
               Launch Your E-Commerce <br />
-              <span className="text-gradient">Business Effortlessly</span>
+              <span className="inline-block min-h-[1.2em]">
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={index}
+                    initial={{ y: 15, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -15, opacity: 0 }}
+                    transition={{ duration: 0.4, ease: "easeOut" }}
+                    className="text-gradient inline-block"
+                  >
+                    {words[index]}
+                  </motion.span>
+                </AnimatePresence>
+              </span>
             </h1>
             <p className="text-xl md:text-2xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed transition-colors">
-              Empowering entrepreneurs with cutting-edge tools to build, scale, and manage 
-              successful online stores in record time.
+              Cutting-edge tools designed for entrepreneurs to build, scale, and manage successful online stores—faster than ever.
             </p>
           </motion.div>
 
