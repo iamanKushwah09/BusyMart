@@ -10,6 +10,7 @@ import {
   ArrowRight
 } from 'lucide-react';
 import { cn } from '../lib/utils';
+import servicesBg from '../assets/images/services-bg.jpg';
 
 const services = [
   {
@@ -105,7 +106,7 @@ const Services = () => {
               <div className="relative">
                 <div className="aspect-square rounded-[3rem] p-4 border-emerald-100 overflow-hidden shadow-2xl">
                   <img 
-                    src="https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=2000" 
+                    src={servicesBg} 
                     alt="Success"
                     className="w-full h-full object-cover rounded-[2.5rem] opacity-90 group-hover:scale-105 transition-transform duration-1000"
                   />

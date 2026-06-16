@@ -2,7 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, MessageSquare, ShieldCheck, Zap, Globe } from 'lucide-react';
 import ParticleBackground from './ParticleBackground';
+import heroDashboard from '../assets/images/hero-dashboard.jpg';
+import avatar1 from '../assets/images/avatar-1.jpg';
+import avatar2 from '../assets/images/avatar-2.jpg';
+import avatar3 from '../assets/images/avatar-3.jpg';
 
+const avatars = [avatar1, avatar2, avatar3];
 const Hero = () => {
   const [index, setIndex] = useState(0);
   const words = [
@@ -98,7 +103,7 @@ const Hero = () => {
               <div className="aspect-[16/9] glass rounded-[2.5rem] p-4 border-emerald-100 overflow-hidden relative group shadow-2xl">
                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/40 via-transparent to-green-50/40" />
                 <img 
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2426" 
+                  src={heroDashboard} 
                   alt="E-commerce Dashboard"
                   className="w-full h-full object-cover rounded-3xl opacity-90 group-hover:scale-105 transition-transform duration-700"
                 />
@@ -129,7 +134,7 @@ const Hero = () => {
                     <div className="flex -space-x-2">
                       {[1, 2, 3].map((i) => (
                         <div key={i} className="w-8 h-8 rounded-full border-2 border-white bg-emerald-50">
-                          <img src={`https://i.pravatar.cc/32?img=${i + 10}`} alt="User" className="w-full h-full rounded-full" />
+                          <img src={avatars[i - 1]} alt="User" className="w-full h-full rounded-full" />
                         </div>
                       ))}
                     </div>
