@@ -8,7 +8,7 @@ const EnquiryForm = () => {
 
   const onSubmit = async (data) => {
     try {
-      const response = await fetch("https://formsubmit.co/ajax/logicfirst2022@gmail.com", {
+      const response = await fetch("https://formsubmit.co/ajax/Info@Logicfirst.in", {
         method: "POST",
         headers: { 
           'Content-Type': 'application/json',
@@ -75,7 +75,7 @@ const EnquiryForm = () => {
                     <CheckCircle2 className="w-12 h-12" />
                   </div>
                   <h3 className="text-3xl font-bold text-slate-900">Message Sent!</h3>
-                  <p className="text-slate-500 max-w-xs mx-auto mb-6">We&apos;ll be in touch very soon via logicfirst2022@gmail.com. Thank you for choosing MartBusy.</p>
+                  <p className="text-slate-500 max-w-xs mx-auto mb-6">We&apos;ll be in touch very soon via Info@Logicfirst.in. Thank you for choosing MartBusy.</p>
                   <a 
                     href={`https://wa.me/918076901732?text=${encodeURIComponent(`Hi, I just submitted an enquiry on MartBusy.\nName: ${localStorage.getItem('last_enquiry_name') || 'Customer'}\nMessage: ${localStorage.getItem('last_enquiry_msg') || ''}`)}`}
                     target="_blank"

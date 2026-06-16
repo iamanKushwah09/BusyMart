@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import About from './components/About';
-import Services from './components/Services';
-import Features from './components/Features';
-import Testimonials from './components/Testimonials';
-import EnquiryForm from './components/EnquiryForm';
-import Footer from './components/Footer';
-import WhatsAppButton from './components/WhatsAppButton';
 import InteractiveBackground from './components/InteractiveBackground';
-import BusyIntegration from './components/BusyIntegration';
 import { motion, AnimatePresence } from 'framer-motion';
 
+const About = lazy(() => import('./components/About'));
+const Services = lazy(() => import('./components/Services'));
+const Features = lazy(() => import('./components/Features'));
+const Testimonials = lazy(() => import('./components/Testimonials'));
+const EnquiryForm = lazy(() => import('./components/EnquiryForm'));
+const Footer = lazy(() => import('./components/Footer'));
+const WhatsAppButton = lazy(() => import('./components/WhatsAppButton'));
+const BusyIntegration = lazy(() => import('./components/BusyIntegration'));
 function App() {
   const [loading, setLoading] = useState(true);
 
@@ -57,15 +57,19 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-        <About />
-        <Services />
-        <BusyIntegration />
-        <Features />
-        <Testimonials />
-        <EnquiryForm />
+        <Suspense fallback={<div className="py-20 text-center">Loading...</div>}>
+          <About />
+          <Services />
+          <BusyIntegration />
+          <Features />
+          <Testimonials />
+          <EnquiryForm />
+        </Suspense>
       </main>
-      <Footer />
-      <WhatsAppButton />
+      <Suspense fallback={null}>
+        <Footer />
+        <WhatsAppButton />
+      </Suspense>
     </div>
   );
 }

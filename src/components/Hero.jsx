@@ -3,11 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, MessageSquare, ShieldCheck, Zap, Globe } from 'lucide-react';
 import ParticleBackground from './ParticleBackground';
 import heroDashboard from '../assets/images/hero-dashboard.jpg';
-import avatar1 from '../assets/images/avatar-1.jpg';
-import avatar2 from '../assets/images/avatar-2.jpg';
-import avatar3 from '../assets/images/avatar-3.jpg';
 
-const avatars = [avatar1, avatar2, avatar3];
 const Hero = () => {
   const [index, setIndex] = useState(0);
   const words = [
@@ -125,22 +121,6 @@ const Hero = () => {
                   </div>
                 </motion.div>
 
-                <motion.div 
-                  className="absolute bottom-10 left-10 p-4 glass rounded-2xl border-emerald-100 shadow-xl"
-                  animate={{ y: [0, 10, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="flex -space-x-2">
-                      {[1, 2, 3].map((i) => (
-                        <div key={i} className="w-8 h-8 rounded-full border-2 border-white bg-emerald-50">
-                          <img src={avatars[i - 1]} alt="User" className="w-full h-full rounded-full" />
-                        </div>
-                      ))}
-                    </div>
-                    <p className="text-xs font-bold text-slate-700">500+ New Stores</p>
-                  </div>
-                </motion.div>
               </div>
             </div>
           </motion.div>
