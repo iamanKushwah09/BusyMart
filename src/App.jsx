@@ -11,7 +11,6 @@ const Testimonials = lazy(() => import('./components/Testimonials'));
 const EnquiryForm = lazy(() => import('./components/EnquiryForm'));
 const Footer = lazy(() => import('./components/Footer'));
 const WhatsAppButton = lazy(() => import('./components/WhatsAppButton'));
-const BusyIntegration = lazy(() => import('./components/BusyIntegration'));
 function App() {
   const [loading, setLoading] = useState(true);
 
@@ -60,7 +59,6 @@ function App() {
         <Suspense fallback={<div className="py-20 text-center">Loading...</div>}>
           <About />
           <Services />
-          <BusyIntegration />
           <Features />
           <Testimonials />
           <EnquiryForm />
