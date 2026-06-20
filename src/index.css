@@ -41,11 +41,15 @@ html {
   background-color: #ffffff !important;
   color: #1f2937 !important;
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
   background-color: #ffffff !important;
   color: #1f2937 !important;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .glass {

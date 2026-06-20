@@ -3,10 +3,12 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import InteractiveBackground from './components/InteractiveBackground';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ShoppingBag, Package, Store, Tag } from 'lucide-react';
 
 const About = lazy(() => import('./components/About'));
 const Services = lazy(() => import('./components/Services'));
 const Features = lazy(() => import('./components/Features'));
+const BusyIntegration = lazy(() => import('./components/BusyIntegration'));
 const Testimonials = lazy(() => import('./components/Testimonials'));
 const EnquiryForm = lazy(() => import('./components/EnquiryForm'));
 const Footer = lazy(() => import('./components/Footer'));
@@ -17,11 +19,11 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 3500);
     return () => clearTimeout(timer);
   }, []);
   return (
-    <div className="bg-white text-slate-900 transition-colors duration-300 min-h-screen selection:bg-emerald-500 selection:text-white relative">
+    <div className="bg-white text-slate-900 transition-colors duration-300 min-h-screen selection:bg-emerald-500 selection:text-white relative overflow-x-hidden w-full">
       <InteractiveBackground />
       <AnimatePresence>
         {loading && (
@@ -44,70 +46,123 @@ function App() {
             />
 
             <div className="relative flex flex-col items-center z-10">
-              {/* Liquid Morphing Spinner */}
-              <div className="relative w-28 h-28 flex items-center justify-center mb-10">
-                {[...Array(3)].map((_, i) => (
-                  <motion.div
-                    key={i}
-                    className="absolute w-full h-full border-2 border-emerald-500/80 mix-blend-multiply"
-                    animate={{
-                      scale: [1, 1.2, 1],
-                      rotate: [0, 180, 360],
-                      borderRadius: [
-                        '40% 60% 70% 30% / 40% 50% 60% 50%',
-                        '60% 40% 30% 70% / 60% 50% 40% 50%',
-                        '40% 60% 70% 30% / 40% 50% 60% 50%'
-                      ]
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: i * 0.4
-                    }}
-                  />
-                ))}
+              {/* Unique E-commerce Animation */}
+              <div className="relative w-48 h-48 flex flex-col items-center justify-end mb-8">
+                
+                {/* Falling E-commerce Elements */}
                 <motion.div
-                  className="absolute inset-0 bg-emerald-50 rounded-full blur-xl -z-10"
-                  animate={{ scale: [0.8, 1.2, 0.8], opacity: [0.5, 0.8, 0.5] }}
+                  className="absolute top-0 text-emerald-500 z-0"
+                  animate={{
+                    y: [-20, 80],
+                    opacity: [0, 1, 0],
+                    scale: [0.5, 1, 0.5],
+                    rotate: [0, 180]
+                  }}
+                  transition={{ duration: 1.8, repeat: Infinity, ease: "easeIn" }}
+                >
+                  <Package className="w-8 h-8 drop-shadow-md" />
+                </motion.div>
+                
+                <motion.div
+                  className="absolute top-4 -ml-24 text-emerald-400 z-0"
+                  animate={{
+                    y: [-20, 70],
+                    x: [0, 30],
+                    opacity: [0, 1, 0],
+                    scale: [0.5, 1, 0.5],
+                    rotate: [-45, 45]
+                  }}
+                  transition={{ duration: 1.8, delay: 0.6, repeat: Infinity, ease: "easeIn" }}
+                >
+                  <Tag className="w-7 h-7 drop-shadow-md" />
+                </motion.div>
+                
+                <motion.div
+                  className="absolute top-2 ml-24 text-emerald-600 z-0"
+                  animate={{
+                    y: [-20, 70],
+                    x: [0, -30],
+                    opacity: [0, 1, 0],
+                    scale: [0.5, 1, 0.5],
+                    rotate: [45, -45]
+                  }}
+                  transition={{ duration: 1.8, delay: 1.2, repeat: Infinity, ease: "easeIn" }}
+                >
+                  <Store className="w-8 h-8 drop-shadow-md" />
+                </motion.div>
+
+                {/* Main Shopping Bag holding the Logo */}
+                <motion.div
+                  className="relative z-10 bg-white/90 backdrop-blur-md p-6 rounded-[2rem] shadow-2xl border border-emerald-100 flex items-center justify-center overflow-hidden"
+                  animate={{ 
+                    scale: [1, 1.05, 1],
+                    y: [0, -10, 0]
+                  }}
                   transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                />
-                <motion.img 
-                  src="/favicon.png" 
-                  alt="Loading Logo" 
-                  className="absolute w-12 h-12 object-contain drop-shadow-xl"
-                  animate={{ scale: [0.9, 1.1, 0.9] }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-tr from-emerald-50 to-transparent opacity-50" />
+                  <motion.img 
+                    src="/logo.png" 
+                    alt="MartBusy Loading" 
+                    className="relative z-10 w-16 h-16 object-contain drop-shadow-lg"
+                    animate={{ rotate: [-5, 5, -5] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  />
+                  
+                  {/* Glowing aura */}
+                  <motion.div
+                    className="absolute inset-0 bg-emerald-400 rounded-[2rem] blur-2xl -z-10"
+                    animate={{ opacity: [0.2, 0.5, 0.2] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                  />
+                </motion.div>
+                
+                {/* Bag handles (decorative) */}
+                <motion.div 
+                  className="absolute bottom-[88px] w-16 h-10 border-4 border-emerald-200 border-b-0 rounded-t-full z-0"
+                  animate={{ 
+                    scale: [1, 1.05, 1],
+                    y: [0, -10, 0]
+                  }}
                   transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                 />
               </div>
 
-              {/* Staggered Text Reveal */}
-              <div className="flex overflow-hidden mb-5">
-                {"MartBusy".split("").map((letter, index) => (
-                  <motion.span
-                    key={index}
-                    className="text-3xl md:text-4xl font-black text-slate-800 tracking-widest font-display"
-                    initial={{ y: 50, opacity: 0, rotateX: -90 }}
-                    animate={{ y: 0, opacity: 1, rotateX: 0 }}
-                    transition={{
-                      duration: 0.6,
-                      delay: index * 0.08,
-                      ease: [0.22, 1, 0.36, 1]
+              {/* Dynamic Loading Text */}
+              <div className="flex flex-col items-center">
+                <motion.div className="flex gap-2 mb-3">
+                  {"Preparing Store...".split("").map((letter, index) => (
+                    <motion.span
+                      key={index}
+                      className="text-xl md:text-2xl font-black text-slate-800 tracking-tight font-display"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{
+                        duration: 0.4,
+                        delay: index * 0.05,
+                        repeat: Infinity,
+                        repeatDelay: 2
+                      }}
+                    >
+                      {letter === " " ? "\u00A0" : letter}
+                    </motion.span>
+                  ))}
+                </motion.div>
+                
+                {/* Modern minimal progress bar */}
+                <div className="w-32 h-1 bg-slate-100 rounded-full overflow-hidden">
+                  <motion.div 
+                    className="h-full bg-emerald-500 rounded-full"
+                    animate={{ 
+                      x: ["-100%", "100%"]
                     }}
-                  >
-                    {letter}
-                  </motion.span>
-                ))}
-              </div>
-              
-              {/* Premium Progress Bar */}
-              <div className="relative w-48 h-1.5 bg-emerald-100 rounded-full overflow-hidden">
-                <motion.div 
-                  className="absolute top-0 left-0 h-full bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full"
-                  initial={{ width: "0%" }}
-                  animate={{ width: "100%" }}
-                  transition={{ duration: 1.8, ease: "easeInOut" }}
-                />
+                    transition={{ 
+                      duration: 1.5, 
+                      repeat: Infinity, 
+                      ease: "easeInOut" 
+                    }}
+                  />
+                </div>
               </div>
             </div>
           </motion.div>
@@ -121,6 +176,7 @@ function App() {
           <About />
           <Services />
           <Features />
+          <BusyIntegration />
           <Testimonials />
           <EnquiryForm />
         </Suspense>

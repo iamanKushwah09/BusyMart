@@ -1,26 +1,20 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Star, Quote } from 'lucide-react';
+import { Star, Quote, User } from 'lucide-react';
 
 const testimonials = [
-  {
-    name: 'Atul Rathore',
-    role: 'MERN Stack Developer',
-    image: '/Atul.jpeg',
-    content: 'Built with modern MERN technologies, MartBusy offers a fast, scalable, and smooth experience. It handles complex operations effortlessly while maintaining a clean interface.',
-    rating: 5
-  },
+
   {
     name: 'Sahil Kumar',
     role: '.Net Developer',
-    image: '/Sahil.jpeg',
+    icon: <User className='w-8 h-8 text-emerald-500'/>,
     content: 'A powerful and dependable solution built with strong backend architecture. MartBusy ensures security, performance, and consistency across all operations.',
     rating: 5
   },
   {
     name: 'Aman Kushwah',
     role: 'Lead Developer',
-    image: '/Aman.jpg',
+    icon: <User className="w-8 h-8 text-emerald-500" />,
     content: 'An exceptional platform with a clean, intuitive interface and powerful performance. MartBusy has elevated our digital experience and made customer interactions smoother than ever.',
     rating: 5
   }
@@ -37,7 +31,7 @@ const Testimonials = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {testimonials.map((t, i) => (
             <motion.div
               key={i}
@@ -49,7 +43,13 @@ const Testimonials = () => {
             >
               <Quote className="absolute top-8 right-8 w-12 h-12 text-emerald-100/30" />
               <div className="flex items-center gap-4 mb-6 relative z-10">
-                <img src={t.image} alt={t.name} className="w-16 h-16 rounded-full object-cover border-2 border-emerald-500 shadow-md" />
+                {t.image ? (
+                  <img src={t.image} alt={t.name} className="w-16 h-16 rounded-full object-cover border-2 border-emerald-500 shadow-md" />
+                ) : (
+                  <div className="w-16 h-16 rounded-full border-2 border-emerald-500 shadow-md flex items-center justify-center bg-emerald-50">
+                    {t.icon}
+                  </div>
+                )}
                 <div>
                   <h4 className="font-bold text-slate-900">{t.name}</h4>
                   <p className="text-sm text-slate-500">{t.role}</p>

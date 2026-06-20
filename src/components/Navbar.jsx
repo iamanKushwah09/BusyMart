@@ -62,10 +62,11 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         <a href="#home" onClick={() => handleNavLinkClick('#home')} className="flex items-center gap-3.5 group">
-          <div className="relative h-10 md:h-11 flex items-center justify-center transition-all duration-500 group-hover:scale-105">
+          <div className="relative h-14 md:h-16 flex items-center justify-center transition-all duration-500 group-hover:scale-105">
             <img 
-              src="/favicon.png" 
+              src="/logo.png" 
               alt="MartBusy Logo" 
+              loading="lazy"
               className="h-full w-auto object-contain drop-shadow-sm"
             />
           </div>

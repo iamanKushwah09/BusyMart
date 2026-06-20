@@ -8,10 +8,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
             <a href="#" className="flex items-center gap-4 group">
-              <div className="h-12 w-auto flex items-center transition-all duration-500 group-hover:scale-105">
+              <div className="h-16 w-auto flex items-center transition-all duration-500 group-hover:scale-105">
                 <img 
-                  src="/favicon.png" 
+                  src="/logo.png" 
                   alt="MartBusy Logo" 
+                  loading="lazy"
                   className="h-full w-auto object-contain"
                 />
               </div>

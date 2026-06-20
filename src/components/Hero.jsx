@@ -14,13 +14,14 @@ const Hero = () => {
     "Business Effortlessly",
     "Store Instantly",
     "Sales Automatically",
-    "Brand Globally"
+    "Brand Globally",
+    "Integrated with Busy"
   ];
 
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % words.length);
-    }, 3000);
+    }, 4000);
     return () => clearInterval(timer);
   }, []);
 
@@ -99,13 +100,26 @@ const Hero = () => {
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={index}
-                    initial={{ y: 15, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: -15, opacity: 0 }}
-                    transition={{ duration: 0.4, ease: "easeOut" }}
                     className="text-gradient inline-block"
+                    initial="hidden"
+                    animate="visible"
+                    exit="hidden"
+                    variants={{
+                      hidden: { opacity: 0, transition: { duration: 0.3 } },
+                      visible: { opacity: 1, transition: { staggerChildren: 0.05 } }
+                    }}
                   >
-                    {words[index]}
+                    {words[index].split("").map((char, i) => (
+                      <motion.span
+                        key={i}
+                        variants={{
+                          hidden: { opacity: 0, display: "none" },
+                          visible: { opacity: 1, display: "inline-block" }
+                        }}
+                      >
+                        {char === " " ? "\u00A0" : char}
+                      </motion.span>
+                    ))}
                   </motion.span>
                 </AnimatePresence>
               </span>
@@ -157,6 +171,7 @@ const Hero = () => {
                 <img 
                   src={heroDashboard} 
                   alt="E-commerce Dashboard"
+                  loading="lazy"
                   className="w-full h-full object-cover rounded-3xl opacity-90 group-hover:scale-105 transition-transform duration-700"
                 />
                 

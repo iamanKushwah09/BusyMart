@@ -8,114 +8,204 @@ import {
   RefreshCw, 
   ShieldCheck,
   LayoutGrid,
-  FileText
+  FileText,
+  MapPin,
+  Route,
+  CreditCard,
+  LineChart,
+  History,
+  TrendingUp,
+  Smartphone,
+  Lock,
+  Search,
+  PieChart,
+  CheckCircle2,
+  Image as ImageIcon
 } from 'lucide-react';
 import { cn } from '../lib/utils';
 
-const integrationFeatures = [
+const advancedFeatures = [
   {
-    title: "Item Master Sync",
-    desc: "Real-time synchronization of your inventory, categories, and pricing directly from BUSY.",
-    icon: <Database className="w-6 h-6" />,
-    className: "md:col-span-2 md:row-span-1 bg-emerald-50/50 border-emerald-100",
-    iconColor: "text-emerald-600"
+    title: "Real-Time Stock Sync",
+    desc: "Instant stock synchronization from BUSY.",
+    icon: <RefreshCw className="w-5 h-5" />,
+    color: "text-emerald-600",
+    bg: "bg-emerald-50",
+    border: "border-emerald-100"
   },
   {
-    title: "Party Ledgers",
-    desc: "Instant access to party-wise accounts and outstanding balances.",
-    icon: <Users className="w-6 h-6" />,
-    className: "md:col-span-1 md:row-span-1 bg-blue-50/50 border-blue-100",
-    iconColor: "text-blue-600"
+    title: "Price Lists",
+    desc: "Customer-wise and Vendor-wise price lists.",
+    icon: <Users className="w-5 h-5" />,
+    color: "text-blue-600",
+    bg: "bg-blue-50",
+    border: "border-blue-100"
   },
   {
-    title: "Bill Receivables",
-    desc: "Track and manage all your pending bills and receivables seamlessly.",
-    icon: <Receipt className="w-6 h-6" />,
-    className: "md:col-span-1 md:row-span-2 bg-purple-50/50 border-purple-100",
-    iconColor: "text-purple-600"
+    title: "Image & Docs",
+    desc: "Product Image & Document Management.",
+    icon: <ImageIcon className="w-5 h-5" />,
+    color: "text-purple-600",
+    bg: "bg-purple-50",
+    border: "border-purple-100"
   },
   {
-    title: "Salesman Order Booking",
-    desc: "Enable your sales team to book orders on-the-go with immediate sync to your central system.",
-    icon: <ShoppingCart className="w-6 h-6" />,
-    className: "md:col-span-2 md:row-span-1 bg-orange-50/50 border-orange-100",
-    iconColor: "text-orange-600"
+    title: "Approval Workflow",
+    desc: "Order Approval Workflow for secure processing.",
+    icon: <CheckCircle2 className="w-5 h-5" />,
+    color: "text-rose-600",
+    bg: "bg-rose-50",
+    border: "border-rose-100"
   },
   {
-    title: "Real-time Synchronization",
-    desc: "Zero delay between your offline BUSY data and your online digital storefront.",
-    icon: <RefreshCw className="w-6 h-6" />,
-    className: "md:col-span-2 md:row-span-1 bg-cyan-50/50 border-cyan-100",
-    iconColor: "text-cyan-600"
+    title: "GPS Tracking",
+    desc: "Salesman GPS Tracking for field operations.",
+    icon: <MapPin className="w-5 h-5" />,
+    color: "text-orange-600",
+    bg: "bg-orange-50",
+    border: "border-orange-100"
   },
   {
-    title: "Account Masters",
-    desc: "Comprehensive management of all your account groups and ledgers.",
-    icon: <FileText className="w-6 h-6" />,
-    className: "md:col-span-1 md:row-span-1 bg-rose-50/50 border-rose-100",
-    iconColor: "text-rose-600"
+    title: "Route Planning",
+    desc: "Route Planning & Visit Monitoring.",
+    icon: <Route className="w-5 h-5" />,
+    color: "text-cyan-600",
+    bg: "bg-cyan-50",
+    border: "border-cyan-100"
+  },
+  {
+    title: "Collection Entry",
+    desc: "Seamless payment and collection entry.",
+    icon: <CreditCard className="w-5 h-5" />,
+    color: "text-indigo-600",
+    bg: "bg-indigo-50",
+    border: "border-indigo-100"
+  },
+  {
+    title: "Sales Analytics",
+    desc: "Comprehensive Sales Analytics Dashboard.",
+    icon: <LineChart className="w-5 h-5" />,
+    color: "text-pink-600",
+    bg: "bg-pink-50",
+    border: "border-pink-100"
+  },
+  {
+    title: "Order History",
+    desc: "Detailed Customer Order History.",
+    icon: <History className="w-5 h-5" />,
+    color: "text-teal-600",
+    bg: "bg-teal-50",
+    border: "border-teal-100"
+  },
+  {
+    title: "Vendor Reports",
+    desc: "Vendor Performance Reports for insights.",
+    icon: <TrendingUp className="w-5 h-5" />,
+    color: "text-amber-600",
+    bg: "bg-amber-50",
+    border: "border-amber-100"
+  },
+  {
+    title: "Mobile Responsive",
+    desc: "Mobile Responsive Design for all devices.",
+    icon: <Smartphone className="w-5 h-5" />,
+    color: "text-sky-600",
+    bg: "bg-sky-50",
+    border: "border-sky-100"
+  },
+  {
+    title: "Access Control",
+    desc: "Role-Based User Access Control.",
+    icon: <Lock className="w-5 h-5" />,
+    color: "text-red-600",
+    bg: "bg-red-50",
+    border: "border-red-100"
+  },
+  {
+    title: "Auto Sync",
+    desc: "Automatic Sale Order Sync with BUSY.",
+    icon: <Database className="w-5 h-5" />,
+    color: "text-lime-600",
+    bg: "bg-lime-50",
+    border: "border-lime-100"
+  },
+  {
+    title: "Ledger Reports",
+    desc: "Ledger & Outstanding Ageing Reports.",
+    icon: <FileText className="w-5 h-5" />,
+    color: "text-fuchsia-600",
+    bg: "bg-fuchsia-50",
+    border: "border-fuchsia-100"
+  },
+  {
+    title: "Product Search",
+    desc: "Product Search, Filter & Category Navigation.",
+    icon: <Search className="w-5 h-5" />,
+    color: "text-yellow-600",
+    bg: "bg-yellow-50",
+    border: "border-yellow-100"
+  },
+  {
+    title: "BI Reports",
+    desc: "Business Intelligence & Performance Reports.",
+    icon: <PieChart className="w-5 h-5" />,
+    color: "text-violet-600",
+    bg: "bg-violet-50",
+    border: "border-violet-100"
   }
 ];
 
 const BusyIntegration = () => {
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-24 bg-slate-50 relative overflow-hidden">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 py-1.5 px-4 mb-6 rounded-full bg-emerald-100/50 border border-emerald-200 text-sm font-semibold text-emerald-800"
+          >
+            <ShieldCheck className="w-4 h-4" />
+            Enterprise Grade Software
+          </motion.div>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-black font-display text-slate-900 mb-6"
+            className="text-4xl md:text-6xl font-black font-display text-slate-900 mb-6 leading-tight"
           >
-            Powerful <span className="text-emerald-500">BUSY</span> Integration
+            Advanced <span className="text-emerald-500">BUSY</span> Integration
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-slate-500 max-w-3xl mx-auto text-xl font-medium"
+            className="text-slate-600 max-w-3xl mx-auto text-lg md:text-xl font-medium"
           >
-            Bridge the gap between your accounting and your sales. Our deep integration with BUSY Accounting Software ensures your business data is always accurate and available.
+            Experience seamless online data synchronization with BUSY. Elevate your business with professional tools designed to enhance efficiency and growth.
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-7xl mx-auto">
-          {integrationFeatures.map((feature, index) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto relative z-10">
+          {advancedFeatures.map((feature, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+              transition={{ delay: index * 0.05 }}
               whileHover={{ y: -5, scale: 1.02 }}
-              className={cn(
-                "p-8 rounded-[2.5rem] border transition-all duration-300 group flex flex-col justify-between",
-                feature.className
-              )}
+              className="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:shadow-emerald-100/50 transition-all duration-300 group flex flex-col h-full"
             >
-              <div className="flex-grow">
-                <motion.div 
-                  animate={{ y: [0, -5, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: index * 0.2 }}
-                  className={cn(
-                    "w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110 duration-500 bg-white shadow-lg border border-slate-100",
-                    feature.iconColor
-                  )}
-                >
-                  {feature.icon}
-                </motion.div>
-                <h3 className="text-2xl font-bold text-slate-800 mb-3">{feature.title}</h3>
-                <p className="text-slate-500 leading-relaxed font-medium">
-                  {feature.desc}
-                </p>
+              <div className={cn("w-12 h-12 rounded-2xl flex items-center justify-center mb-5 transition-transform group-hover:rotate-6", feature.bg, feature.border, feature.color)}>
+                {feature.icon}
               </div>
-              <div className="mt-8 flex justify-end">
-                <div className="w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
-                  <ShieldCheck className={cn("w-5 h-5", feature.iconColor)} />
-                </div>
-              </div>
+              <h3 className="text-lg font-bold text-slate-800 mb-2">{feature.title}</h3>
+              <p className="text-slate-500 text-sm leading-relaxed font-medium mt-auto">
+                {feature.desc}
+              </p>
             </motion.div>
           ))}
         </div>
@@ -123,8 +213,8 @@ const BusyIntegration = () => {
       
       {/* Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-emerald-100/20 rounded-full blur-[120px]" />
-        <div className="absolute -bottom-[10%] -right-[10%] w-[40%] h-[40%] bg-blue-100/20 rounded-full blur-[120px]" />
+        <div className="absolute top-[10%] -left-[10%] w-[50%] h-[50%] bg-emerald-200/20 rounded-full blur-[120px]" />
+        <div className="absolute bottom-[10%] -right-[10%] w-[50%] h-[50%] bg-blue-200/20 rounded-full blur-[120px]" />
       </div>
     </section>
   );

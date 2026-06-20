@@ -188,6 +188,7 @@ const Services = () => {
                   <img 
                     src={servicesBg} 
                     alt="Success"
+                    loading="lazy"
                     className="w-full h-full object-cover rounded-[2.5rem] opacity-90 group-hover:scale-105 transition-transform duration-1000 service-img"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-emerald-500/20 to-transparent pointer-events-none" />

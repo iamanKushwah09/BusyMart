@@ -38,6 +38,26 @@ const InteractiveBackground = () => {
       ease: 'linear',
       repeat: -1,
     });
+
+    // Creative Interactive Cursor Follower
+    const cursor = document.querySelector('.bg-cursor-follower');
+    if (cursor) {
+      // Create quick setters for performance
+      const xTo = gsap.quickTo(cursor, 'x', { duration: 0.8, ease: 'power3.out' });
+      const yTo = gsap.quickTo(cursor, 'y', { duration: 0.8, ease: 'power3.out' });
+
+      const onMouseMove = (e) => {
+        xTo(e.clientX);
+        yTo(e.clientY);
+      };
+
+      window.addEventListener('mousemove', onMouseMove);
+      
+      // Cleanup
+      return () => {
+        window.removeEventListener('mousemove', onMouseMove);
+      };
+    }
   }, { scope: container });
 
   return (
@@ -50,6 +70,9 @@ const InteractiveBackground = () => {
       <div className="absolute bottom-[-20%] left-[10%] w-[60vw] h-[60vw] rounded-[50%_50%_20%_80%] mix-blend-multiply filter blur-[100px] md:blur-[150px] opacity-50 bg-gradient-to-tr from-cyan-100 via-emerald-200 to-teal-50 orb-3"></div>
 
       <div className="absolute top-[40%] left-[40%] w-[30vw] h-[30vw] rounded-[30%_70%_70%_30%] mix-blend-multiply filter blur-[60px] md:blur-[90px] opacity-40 bg-gradient-to-r from-emerald-300 to-green-200 orb-4"></div>
+
+      {/* GSAP Interactive Cursor Follower */}
+      <div className="bg-cursor-follower fixed top-0 left-0 w-[400px] h-[400px] -ml-[200px] -mt-[200px] bg-emerald-400/30 rounded-full blur-[100px] pointer-events-none z-10 mix-blend-screen" />
 
       {/* Animated SVG Grid Overlay */}
       <svg className="absolute inset-0 w-full h-full opacity-[0.15]" xmlns="http://www.w3.org/2000/svg">

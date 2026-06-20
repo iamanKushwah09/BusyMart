@@ -46,9 +46,9 @@ const About = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="grid grid-cols-2 gap-4"
+            className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-12 lg:mt-0"
           >
-            <div className="space-y-4 pt-12">
+            <div className="space-y-4 md:pt-12">
               <div className="glass p-8 rounded-[2rem] border-emerald-50 hover:border-emerald-200 transition-colors shadow-sm">
                 <Rocket className="w-10 h-10 text-emerald-500 mb-4" />
                 <h4 className="text-xl font-bold mb-2 text-slate-900">Rapid Growth</h4>
