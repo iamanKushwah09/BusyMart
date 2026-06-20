@@ -11,19 +11,19 @@ const Hero = () => {
   const heroRef = useRef();
 
   const words = [
+    "Integrated with BUSY",
     "Business Effortlessly",
     "Store Instantly",
     "Sales Automatically",
-    "Brand Globally",
-    "Integrated with Busy"
+    "Brand Globally"
   ];
 
   useEffect(() => {
-    const timer = setInterval(() => {
+    const timer = setTimeout(() => {
       setIndex((prev) => (prev + 1) % words.length);
-    }, 4000);
-    return () => clearInterval(timer);
-  }, []);
+    }, index === 0 ? 6000 : 3500); // 6 seconds for BUSY, 3.5s for others
+    return () => clearTimeout(timer);
+  }, [index]);
 
   useGSAP(() => {
     // Parallax scrolling for floating shapes
@@ -100,7 +100,7 @@ const Hero = () => {
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={index}
-                    className="text-gradient inline-block"
+                    className="text-gradient inline-block whitespace-nowrap"
                     initial="hidden"
                     animate="visible"
                     exit="hidden"

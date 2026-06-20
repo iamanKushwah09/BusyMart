@@ -7,8 +7,7 @@ import { ShoppingBag, Package, Store, Tag } from 'lucide-react';
 
 const About = lazy(() => import('./components/About'));
 const Services = lazy(() => import('./components/Services'));
-const Features = lazy(() => import('./components/Features'));
-const BusyIntegration = lazy(() => import('./components/BusyIntegration'));
+const EcomBusyIntegration = lazy(() => import('./components/EcomBusyIntegration'));
 const Testimonials = lazy(() => import('./components/Testimonials'));
 const EnquiryForm = lazy(() => import('./components/EnquiryForm'));
 const Footer = lazy(() => import('./components/Footer'));
@@ -175,8 +174,7 @@ function App() {
         <Suspense fallback={<div className="py-20 text-center">Loading...</div>}>
           <About />
           <Services />
-          <Features />
-          <BusyIntegration />
+          <EcomBusyIntegration />
           <Testimonials />
           <EnquiryForm />
         </Suspense>
