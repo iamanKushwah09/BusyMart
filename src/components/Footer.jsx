@@ -9,9 +9,9 @@ const Footer = () => {
           <div className="space-y-6">
             <a href="#" className="flex items-center gap-4 group">
               <div className="h-16 w-auto flex items-center transition-all duration-500 group-hover:scale-105">
-                <img 
-                  src="/logo.png" 
-                  alt="MartBusy Logo" 
+                <img
+                  src="/logo.png"
+                  alt="MartBusy Logo"
                   loading="lazy"
                   className="h-full w-auto object-contain"
                 />
@@ -95,14 +95,7 @@ const Footer = () => {
 
         <div className="pt-8 border-t border-emerald-100 flex flex-col md:flex-row items-center justify-between gap-4 text-slate-400 text-sm font-medium">
           <p>
-            © {new Date().getFullYear()} <a href="https://logicfirst.in" className="hover:text-green-600">LogicFirst Technologies</a>. All rights reserved
-            <span className="relative inline-block cursor-default select-none group/egg">
-              .
-              <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 text-[11px] font-bold text-white bg-slate-900 rounded-lg opacity-0 group-hover/egg:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap z-50 shadow-md transform translate-y-1 group-hover/egg:translate-y-0">
-                Developed by Aman Kushwah
-                <span className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-slate-900" />
-              </span>
-            </span>
+            © {new Date().getFullYear()} <a href="https://logicfirst.in" className="hover:text-green-600">LogicFirst Technologies</a>. All rights reserved.
           </p>
           <div className="flex gap-8">
             <a href="#" className="hover:text-emerald-600 transition-colors">Privacy Policy</a>
